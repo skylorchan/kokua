@@ -4,6 +4,11 @@ name: Data
 # blocks these hosts) and commits the results back to the branch.
 on:
   workflow_dispatch:
+    inputs:
+      refresh_tiles:
+        description: Re-download the Oʻahu map tiles even if they already exist
+        type: boolean
+        default: false
   push:
     paths:
       - 'scripts/data/**'
@@ -17,24 +22,43 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  probe:
+  fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version-file: .nvmrc
-      - run: node scripts/data/probe.mjs
-      - name: Protomaps extract sizes for Oʻahu
+      - name: Probe candidate datasets
+        run: node scripts/data/probe.mjs
+        continue-on-error: true
+      - name: Tsunami evacuation zones
+        run: node scripts/data/fetch-zones.mjs
+      - name: Safe places
+        if: hashFiles('scripts/data/fetch-places.mjs') != ''
+        run: node scripts/data/fetch-places.mjs
+      - name: NWS alert fixtures
+        run: node scripts/data/fetch-nws-fixtures.mjs
+      - name: Oʻahu map tiles (Protomaps, OpenStreetMap data)
+        if: inputs.refresh_tiles || hashFiles('public/tiles/oahu.pmtiles') == ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release download -R protomaps/go-pmtiles -p '*Linux_x86_64.tar.gz' -O pmtiles.tgz
           tar xzf pmtiles.tgz pmtiles
-          BUILD=$(curl -s https://build-metadata.protomaps.dev/builds.json | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const b=JSON.parse(s);console.log(b[b.length-1].key)})")
-          echo "build: $BUILD"
-          for z in 13 14 15; do
-            ./pmtiles extract "https://build.protomaps.com/$BUILD" "oahu-z$z.pmtiles" --bbox=-158.30,21.24,-157.63,21.72 --maxzoom=$z >/dev/null 2>&1 || echo "extract z$z failed"
-            ls -la "oahu-z$z.pmtiles" || true
-          done
+          BUILD=$(curl -sf https://build-metadata.protomaps.dev/builds.json | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const b=JSON.parse(s);console.log(b[b.length-1].key)})")
+          echo "Protomaps build: $BUILD"
+          mkdir -p public/tiles
+          ./pmtiles extract "https://build.protomaps.com/$BUILD" public/tiles/oahu.pmtiles --bbox=-158.30,21.24,-157.63,21.72 --maxzoom=14
+          echo "{\"build\":\"$BUILD\",\"bbox\":[-158.30,21.24,-157.63,21.72],\"maxzoom\":14}" > public/tiles/oahu.json
+          ls -la public/tiles
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data public/tiles src/features/alerts/fixtures
+          if git diff --cached --quiet; then echo "No data changes"; exit 0; fi
+          git commit -m "Update data from official sources (data workflow)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

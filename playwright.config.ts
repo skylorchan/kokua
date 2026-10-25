@@ -2,6 +2,10 @@ import { defineConfig, devices } from '@playwright/test';
 
 const PORT = 4173;
 
+// Cloud dev containers ship a preinstalled Chromium that may not match this Playwright
+// version. Point at it with PW_CHROMIUM_PATH=/path/to/chrome instead of reinstalling.
+const executablePath = process.env.PW_CHROMIUM_PATH;
+
 export default defineConfig({
   testDir: './tests/e2e',
   fullyParallel: true,
@@ -11,6 +15,7 @@ export default defineConfig({
   use: {
     baseURL: `http://localhost:${PORT}/2425/`,
     trace: 'retain-on-failure',
+    ...(executablePath ? { launchOptions: { executablePath } } : {}),
   },
   // Test the production build, because the service worker only exists there.
   webServer: {

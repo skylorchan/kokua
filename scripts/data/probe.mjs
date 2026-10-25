@@ -10,36 +10,53 @@ async function get(url) {
   }
 }
 const strip = (s) => String(s ?? '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const j = async (url) => {
+  try {
+    return JSON.parse((await get(url)).text);
+  } catch {
+    return {};
+  }
+};
+
+async function search(q, n = 15) {
+  console.log(`\n===== search: ${q} =====`);
+  const s = await j(`https://www.arcgis.com/sharing/rest/search?q=${encodeURIComponent(q)}&num=${n}&sortField=modified&sortOrder=desc&f=json`);
+  for (const r of s.results ?? [])
+    console.log(`${new Date(r.modified).toISOString().slice(0, 10)} | ${r.type} | ${r.owner} | ${r.title} | ${r.url ?? ''} | ${r.id}`);
+}
 
 async function layer(base) {
   console.log(`\n===== ${base} =====`);
-  const m = JSON.parse((await get(`${base}?f=json`)).text);
-  console.log({ name: m.name, geometryType: m.geometryType, maxRecordCount: m.maxRecordCount, copyright: m.copyrightText, description: strip(m.description).slice(0, 1200), editingInfo: m.editingInfo });
-  if (m.layers) console.log('layers:', m.layers.map((l) => `${l.id} ${l.name}`).join(' | '));
-  if (!m.fields) return;
-  console.log('fields:', m.fields.map((f) => `${f.name}:${f.type.replace('esriFieldType', '')}${f.domain ? `{${f.domain.codedValues?.map((c) => `${c.code}=${c.name}`).join(',')}}` : ''}`).join(', '));
+  const m = await j(`${base}?f=json`);
+  if (m.error) return console.log('error', m.error);
+  console.log({ name: m.name, geometryType: m.geometryType, copyright: m.copyrightText, lastEdit: m.editingInfo?.lastEditDate && new Date(m.editingInfo.lastEditDate).toISOString(), description: strip(m.description).slice(0, 600) });
+  if (m.layers) {
+    console.log('layers:', m.layers.map((l) => `${l.id} ${l.name}`).join(' | '));
+    return;
+  }
+  console.log('fields:', (m.fields ?? []).map((f) => `${f.name}:${f.type.replace('esriFieldType', '')}`).join(', '));
   console.log('count:', (await get(`${base}/query?where=1%3D1&returnCountOnly=true&f=json`)).text);
-  const sample = JSON.parse((await get(`${base}/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&resultRecordCount=4&f=json`)).text);
-  console.log(JSON.stringify(sample.features, null, 1).slice(0, 5000));
-  for (const field of ['TYPE', 'Type', 'type', 'SHELTER_TYPE', 'Shelter_Type', 'CATEGORY', 'Category', 'STATUS', 'Status', 'HAZARD', 'Hazard']) {
-    if (!m.fields.some((f) => f.name === field)) continue;
-    const s = await get(`${base}/query?where=1%3D1&groupByFieldsForStatistics=${field}&outStatistics=${encodeURIComponent(JSON.stringify([{ statisticType: 'count', onStatisticField: m.objectIdField ?? 'OBJECTID', outStatisticFieldName: 'n' }]))}&f=json`);
-    console.log(`values of ${field}:`, s.text.slice(0, 1500));
-  }
+  const sample = await j(`${base}/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&resultRecordCount=3&f=json`);
+  console.log(JSON.stringify(sample.features, null, 1)?.slice(0, 3500));
 }
 
-async function item(query) {
-  console.log(`\n===== item search: ${query} =====`);
-  const s = JSON.parse((await get(`https://www.arcgis.com/sharing/rest/search?q=${encodeURIComponent(query)}&num=5&f=json`)).text);
-  for (const r of s.results ?? []) {
-    const d = JSON.parse((await get(`https://www.arcgis.com/sharing/rest/content/items/${r.id}?f=json`)).text);
-    console.log({ id: r.id, title: d.title, owner: d.owner, type: d.type, url: d.url, modified: new Date(d.modified).toISOString(), snippet: d.snippet, license: strip(d.licenseInfo).slice(0, 800), access: strip(d.accessInformation).slice(0, 400), description: strip(d.description).slice(0, 1500) });
-  }
-}
+await search('owner:holisgis shelter');
+await search('owner:honolulugis shelter');
+await search('shelter Oahu');
+await search('"evacuation shelters" Hawaii');
+await search('"emergency shelters" Honolulu');
+await search('shelters Kauai OR Maui OR "Hawaii County"');
+await layer('https://services1.arcgis.com/x4h61KaW16vFs7PM/arcgis/rest/services/Potential_Emergency_Shelters_PDC/FeatureServer');
 
-await layer('https://services.arcgis.com/tNJpAOha4mODLkXz/arcgis/rest/services/Public_Safety/FeatureServer');
-await layer('https://services.arcgis.com/tNJpAOha4mODLkXz/arcgis/rest/services/Public_Safety/FeatureServer/5');
-await item('title:"Potential Emergency Shelters" owner:holisgis');
-await item('title:"Public Safety" owner:holisgis');
-await layer('https://services1.arcgis.com/x4h61KaW16vFs7PM/arcgis/rest/services/Potential_Emergency_Shelters_PDC/FeatureServer/0');
-await item('Potential_Emergency_Shelters_PDC');
+// How old are the Hawaiʻi records in the FEMA / Red Cross National Shelter System layer?
+const NSS = 'https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/Critical_Infrastructure_Map_Service/FeatureServer/0';
+const stats = await j(`${NSS}/query?where=STATE%3D%27HI%27&outStatistics=${encodeURIComponent(JSON.stringify([{ statisticType: 'max', onStatisticField: 'CONTDATE', outStatisticFieldName: 'maxcont' }, { statisticType: 'max', onStatisticField: 'GEODATE', outStatisticFieldName: 'maxgeo' }, { statisticType: 'min', onStatisticField: 'GEODATE', outStatisticFieldName: 'mingeo' }, { statisticType: 'count', onStatisticField: 'OBJECTID', outStatisticFieldName: 'n' }]))}&f=json`);
+const a = stats.features?.[0]?.attributes ?? {};
+console.log('\nNSS HI:', { n: a.n, maxContact: a.maxcont && new Date(a.maxcont).toISOString(), geoRange: [a.mingeo && new Date(a.mingeo).toISOString(), a.maxgeo && new Date(a.maxgeo).toISOString()] });
+for (const f of ['COUNTY', 'S_TYPE', 'ST_VERSION', 'AGENCY_OP']) {
+  const g = await j(`${NSS}/query?where=STATE%3D%27HI%27&groupByFieldsForStatistics=${f}&outStatistics=${encodeURIComponent(JSON.stringify([{ statisticType: 'count', onStatisticField: 'OBJECTID', outStatisticFieldName: 'n' }]))}&f=json`);
+  console.log(f, JSON.stringify(g.features?.map((x) => x.attributes)));
+}
+const svc = await j('https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/Critical_Infrastructure_Map_Service/FeatureServer?f=json');
+console.log('NSS service:', strip(svc.serviceDescription).slice(0, 600), '| copyright:', svc.copyrightText);
+await search('"National Shelter System Facilities"', 5);

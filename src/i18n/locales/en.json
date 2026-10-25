@@ -29,13 +29,18 @@
   "screens": {
     "zone": {
       "title": "Am I in an evacuation zone?",
-      "body": "Checking your location against official tsunami evacuation zones is coming soon.",
+      "body": "Check a location against tsunami evacuation zones. This works offline.",
       "naturalWarningHeading": "Natural tsunami warning signs",
-      "naturalWarningSource": "Source: National Weather Service tsunami safety guidance"
+      "naturalWarningSource": "Source: National Weather Service tsunami safety guidance",
+      "inZone": "You are in a tsunami evacuation zone",
+      "notInZone": "You are outside the mapped tsunami evacuation zones",
+      "outsideCoverage": "This location is outside the area our zone data covers, so we can't tell you."
     },
     "places": {
       "title": "Nearest safe places",
-      "body": "Finding the nearest safe places near you is coming soon."
+      "body": "The closest places from your location, by straight-line distance. This works offline.",
+      "listLabel": "Nearest places",
+      "distance": "{{km}} km ({{mi}} mi) to the {{dir}}"
     },
     "alerts": {
       "title": "Weather alerts",
@@ -47,6 +52,49 @@
     }
   },
   "safety": {
-    "naturalWarning": "If you feel a strong earthquake or see the ocean suddenly pull back, move inland or to high ground right away. Do not wait for an official warning."
+    "naturalWarning": "If you feel a strong earthquake or see the ocean suddenly pull back, move inland or to high ground right away. Do not wait for an official warning.",
+    "inZone": "If a tsunami warning is issued, leave this zone right away. Go inland or to high ground, on foot if you can.",
+    "notInZone": "Being outside a mapped zone does not guarantee you are safe. Always follow instructions from emergency officials.",
+    "placesDisclaimer": "Distances are straight-line, not driving or walking routes. Shelters open only for specific emergencies, so check official announcements before you go."
+  },
+  "location": {
+    "heading": "Your location",
+    "useMine": "Use my location",
+    "locating": "Finding your location…",
+    "denied": "Location access is turned off. You can enter coordinates instead.",
+    "unavailable": "Couldn't get your location. You can enter coordinates instead.",
+    "unsupported": "This device can't share its location. You can enter coordinates instead.",
+    "current": "Using location {{lat}}, {{lng}}",
+    "manualHeading": "Or enter coordinates",
+    "lat": "Latitude",
+    "lng": "Longitude",
+    "check": "Check these coordinates",
+    "invalid": "Enter a latitude between -90 and 90 and a longitude between -180 and 180."
+  },
+  "data": {
+    "loading": "Loading map data…",
+    "error": "Couldn't load map data. Connect once to download it.",
+    "sampleHeading": "Demo data only",
+    "sampleBody": "The zones and places in this version are made up for demonstration. Do not use them to make safety decisions.",
+    "source": "Source: {{source}}, retrieved {{date}}"
+  },
+  "zoneKind": {
+    "tsunami": "tsunami evacuation zone",
+    "extreme": "extreme tsunami evacuation zone"
+  },
+  "placeKind": {
+    "shelter": "Emergency shelter",
+    "refuge": "Refuge area",
+    "assembly": "Assembly point"
+  },
+  "compass": {
+    "N": "north",
+    "NE": "northeast",
+    "E": "east",
+    "SE": "southeast",
+    "S": "south",
+    "SW": "southwest",
+    "W": "west",
+    "NW": "northwest"
   }
 }

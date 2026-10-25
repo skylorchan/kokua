@@ -234,3 +234,59 @@ main {
     transition: none !important;
   }
 }
+
+/* Zone and places results (M2-M3). */
+.card-danger {
+  background: #fde8e8;
+  border-left: 0.4rem solid #b3261e; /* 6.5:1 on the card background */
+}
+.card-ok {
+  background: #e6f4ea;
+  border-left: 0.4rem solid #1e6b34;
+}
+.card-sample {
+  background: #f3e8fd;
+  border: 2px dashed #6a1b9a;
+}
+.coords-form {
+  margin-top: var(--space);
+}
+.coords-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.coords-fields label {
+  display: grid;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+input {
+  width: 100%;
+  min-width: 0; /* default input width (~20 chars) would push the page wider than a phone */
+  font: inherit;
+  min-height: var(--tap-target);
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--color-text-muted);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+.form-error {
+  color: #b3261e;
+  font-weight: 600;
+}
+.location-status:empty {
+  display: none;
+}
+.location-status p {
+  margin: 0.75rem 0 0;
+}
+.place-list {
+  padding: 0;
+  list-style: none;
+}
+.place-distance {
+  font-weight: 600;
+}

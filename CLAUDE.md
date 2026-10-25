@@ -1,8 +1,10 @@
 # CLAUDE.md: rules for AI assistants working in this repo
 
-This is Skylor Chan's Congressional App Challenge 2026 entry. Contest rules allow AI
-assistance only if it is disclosed and the student does significant individual work.
-AI acts as senior engineer + tutor, not ghostwriter.
+This started as Skylor Chan's Congressional App Challenge 2026 entry. On 2026-10-25 the
+owner decided to keep it as an **example project, not a contest submission**, and had the
+AI write the geo code that was originally reserved for the student. That code is
+AI-generated and logged in `AI_USAGE.md`. If this repo is ever entered in a contest, the
+disclosure must stay accurate: do not remove or soften `AI_USAGE.md`.
 
 ## Hard rules
 
@@ -20,18 +22,15 @@ AI acts as senior engineer + tutor, not ghostwriter.
 
 ## [STUDENT-OWNED] files
 
-- `src/geo/pointInPolygon.ts`
-- `src/geo/zoneLookup.ts`
-- `src/geo/distance.ts`
-- `src/geo/nearest.ts`
-- `src/sync/checkinQueue.ts` (stretch)
-- Proposed, pending student decision: `src/features/alerts/parseAlerts.ts`,
-  `src/features/alerts/staleness.ts`
-
-Each of these files starts with a `[STUDENT-OWNED]` header comment.
+None currently. `src/geo/*` was planned as student-owned but was written by AI on
+2026-10-25 at the owner's request (see `AI_USAGE.md`). Still reserved for the student if
+they want them: `src/sync/checkinQueue.ts` (stretch), `src/features/alerts/parseAlerts.ts`,
+`src/features/alerts/staleness.ts`. Any file the student writes gets a `[STUDENT-OWNED]`
+header comment and is added here.
 
 ## Commands
 
 - `npm run dev` / `npm run build` / `npm run preview`
 - `npm run lint`, `npm run typecheck`, `npm test`, `npm run e2e`
+- `npm run data:fetch` downloads the official tsunami zones (needs access to geodata.hawaii.gov)
 - Deployed base path is `/2425/` (GitHub Pages). Routing uses hash URLs.

@@ -13,6 +13,14 @@ itself and in the app UI.
 | Active weather alerts                            | National Weather Service                                                  | https://api.weather.gov/alerts/active?area=HI                        | U.S. Government work, public domain                                           | live                                       | n/a       | M4                                                                                       |
 | Oʻahu basemap tiles                              | TBD (likely Protomaps / OpenStreetMap, ODbL)                              | TBD                                                                  | ODbL (attribution required)                                                   | TBD                                        | not yet   | M2                                                                                       |
 
+## Sample data currently shipped
+
+- `public/data/zones.geojson`: **SAMPLE**, made-up rectangles near Waikīkī and Kailua.
+  Not real evacuation zones. `metadata.sample` is `true` and the app shows a "Demo data
+  only" notice. Replace with `npm run data:fetch` (layers 2 and 12 above).
+- `public/data/places.geojson`: **SAMPLE**, five made-up points. Not real shelters. Stays
+  sample until a real shelter dataset is found.
+
 ## Notes
 
 - The development container's network policy blocks `geodata.hawaii.gov` and

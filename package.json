@@ -18,7 +18,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "e2e": "playwright test",
-    "i18n:sync": "node scripts/i18n-sync-status.mjs"
+    "i18n:sync": "node scripts/i18n-sync-status.mjs",
+    "data:fetch": "node scripts/fetch-zones.mjs"
   },
   "dependencies": {
     "i18next": "^26.4.2",

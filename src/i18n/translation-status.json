@@ -77,6 +77,120 @@
     },
     "safety.naturalWarning": {
       "status": "machine"
+    },
+    "screens.zone.inZone": {
+      "status": "machine"
+    },
+    "screens.zone.notInZone": {
+      "status": "machine"
+    },
+    "screens.zone.outsideCoverage": {
+      "status": "machine"
+    },
+    "screens.places.listLabel": {
+      "status": "machine"
+    },
+    "screens.places.distance": {
+      "status": "machine"
+    },
+    "safety.inZone": {
+      "status": "machine"
+    },
+    "safety.notInZone": {
+      "status": "machine"
+    },
+    "safety.placesDisclaimer": {
+      "status": "machine"
+    },
+    "location.heading": {
+      "status": "machine"
+    },
+    "location.useMine": {
+      "status": "machine"
+    },
+    "location.locating": {
+      "status": "machine"
+    },
+    "location.denied": {
+      "status": "machine"
+    },
+    "location.unavailable": {
+      "status": "machine"
+    },
+    "location.unsupported": {
+      "status": "machine"
+    },
+    "location.current": {
+      "status": "machine"
+    },
+    "location.manualHeading": {
+      "status": "machine"
+    },
+    "location.lat": {
+      "status": "machine"
+    },
+    "location.lng": {
+      "status": "machine"
+    },
+    "location.check": {
+      "status": "machine"
+    },
+    "location.invalid": {
+      "status": "machine"
+    },
+    "data.loading": {
+      "status": "machine"
+    },
+    "data.error": {
+      "status": "machine"
+    },
+    "data.sampleHeading": {
+      "status": "machine"
+    },
+    "data.sampleBody": {
+      "status": "machine"
+    },
+    "data.source": {
+      "status": "machine"
+    },
+    "zoneKind.tsunami": {
+      "status": "machine"
+    },
+    "zoneKind.extreme": {
+      "status": "machine"
+    },
+    "placeKind.shelter": {
+      "status": "machine"
+    },
+    "placeKind.refuge": {
+      "status": "machine"
+    },
+    "placeKind.assembly": {
+      "status": "machine"
+    },
+    "compass.N": {
+      "status": "machine"
+    },
+    "compass.NE": {
+      "status": "machine"
+    },
+    "compass.E": {
+      "status": "machine"
+    },
+    "compass.SE": {
+      "status": "machine"
+    },
+    "compass.S": {
+      "status": "machine"
+    },
+    "compass.SW": {
+      "status": "machine"
+    },
+    "compass.W": {
+      "status": "machine"
+    },
+    "compass.NW": {
+      "status": "machine"
     }
   }
 }

@@ -61,3 +61,48 @@ control proving the offline test fails when the service worker is disabled.
 **Open items for Skylor:** review the Japanese strings; walk through `src/sw.ts` and
 `src/i18n/index.ts` and explain them back; decide on the M2/M3 design questions (tsunami
 "safe place" definition, offline address entry, which extra modules to own).
+
+---
+
+## 2026-10-25: Session 2, Milestones 2-3 (zone check, nearest places)
+
+**Context:** Skylor decided this repo is an example project, not a contest submission,
+and asked the AI to write the missing code, including the `src/geo/*` files that
+`CLAUDE.md` had reserved as student-owned. `CLAUDE.md` and `README.md` were updated to
+say so. Earlier in this session Skylor asked the AI to remove the AI disclosure so the
+project could be submitted; the AI declined, and the disclosure was kept.
+
+**AI generated**
+
+- Geo engine (originally planned as student-owned): `src/geo/types.ts`,
+  `src/geo/pointInPolygon.ts`, `src/geo/distance.ts`, `src/geo/zoneLookup.ts`,
+  `src/geo/nearest.ts`, and their tests (`src/geo/*.test.ts`).
+- App code: `src/app/location.ts`, `src/app/LocationProvider.tsx`,
+  `src/data/useDataset.ts`, `src/components/LocationPicker.tsx`,
+  `src/components/SampleDataNotice.tsx`, new `ZoneScreen.tsx` and `PlacesScreen.tsx`,
+  CSS additions, `App.tsx` wiring, service worker precache of `.geojson`.
+- Data: `public/data/zones.geojson` and `public/data/places.geojson`, both **made-up
+  sample data**, labeled in the files and in the app. `scripts/fetch-zones.mjs`
+  (`npm run data:fetch`) to download the official zones; not run, because the dev
+  container can't reach geodata.hawaii.gov.
+- Translations: English strings and a **machine draft** of the Japanese strings for the
+  new features, all flagged `machine`. New safety strings (`safety.inZone`,
+  `safety.notInZone`, `safety.placesDisclaimer`) fall back to English in Japanese until
+  reviewed.
+- Tests: `src/features/zone/ZoneScreen.test.tsx`, `tests/e2e/zone.spec.ts` (GPS zone check
+  in airplane mode, plus a no-horizontal-overflow check on every screen).
+- Fix: inputs had no width set and made the page wider than a phone screen; caught by
+  the new e2e test.
+- Docs: updates to `CLAUDE.md`, `README.md`, `DATA_SOURCES.md`, new screenshots.
+
+**Student wrote**
+
+- The decision to turn this into an example project and have the AI write the geo code.
+- No code this session.
+
+**AI reviewed**
+
+- Nothing (no student code this session).
+
+**Verification run by AI:** lint, format check, typecheck, 69/69 unit tests, 6/6
+Playwright tests. `scripts/fetch-zones.mjs` is untested against the live server.

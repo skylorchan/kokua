@@ -1,0 +1,71 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "sample": true,
+    "source": "SAMPLE DATA made up for this demo. Not real evacuation zones. Run `npm run data:fetch` to replace with official data.",
+    "retrieved": null,
+    "coverage": [-158.3, 21.24, -157.63, 21.72]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "sample-1",
+        "name": "SAMPLE coastal zone 1 (not real)",
+        "kind": "tsunami"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-157.86, 21.268],
+            [-157.815, 21.268],
+            [-157.815, 21.286],
+            [-157.86, 21.286],
+            [-157.86, 21.268]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "sample-2",
+        "name": "SAMPLE coastal zone 2 (not real)",
+        "kind": "tsunami"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-157.74, 21.39],
+            [-157.71, 21.39],
+            [-157.71, 21.41],
+            [-157.74, 21.41],
+            [-157.74, 21.39]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "sample-x1",
+        "name": "SAMPLE extreme zone 1 (not real)",
+        "kind": "extreme-tsunami"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-157.87, 21.265],
+            [-157.81, 21.265],
+            [-157.81, 21.295],
+            [-157.87, 21.295],
+            [-157.87, 21.265]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "sample": true,
+    "source": "SAMPLE DATA made up for this demo. Not real shelters or refuge areas. No official statewide shelter dataset has been found yet.",
+    "retrieved": null,
+    "coverage": [-158.3, 21.24, -157.63, 21.72]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "sample-a",
+        "name": "SAMPLE place A (not real)",
+        "kind": "refuge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.835, 21.305]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "sample-b",
+        "name": "SAMPLE place B (not real)",
+        "kind": "shelter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.81, 21.3]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "sample-c",
+        "name": "SAMPLE place C (not real)",
+        "kind": "assembly"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.86, 21.31]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "sample-d",
+        "name": "SAMPLE place D (not real)",
+        "kind": "refuge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.73, 21.42]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "sample-e",
+        "name": "SAMPLE place E (not real)",
+        "kind": "shelter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-158, 21.45]
+      }
+    }
+  ]
+}

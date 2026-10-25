@@ -22,7 +22,7 @@ export default defineConfig({
       registerType: 'prompt',
       injectRegister: false,
       injectManifest: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest,geojson}'],
       },
       includeAssets: ['icons/favicon.svg'],
       manifest: {

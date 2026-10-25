@@ -1,5 +1,6 @@
 import { HashRouter, Route, Routes } from 'react-router';
 import { Layout } from './app/Layout';
+import { LocationProvider } from './app/LocationProvider';
 import { ZoneScreen } from './features/zone/ZoneScreen';
 import { PlacesScreen } from './features/places/PlacesScreen';
 import { AlertsScreen } from './features/alerts/AlertsScreen';
@@ -10,15 +11,17 @@ import { PlanScreen } from './features/plan/PlanScreen';
 export function App() {
   return (
     <HashRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<ZoneScreen />} />
-          <Route path="places" element={<PlacesScreen />} />
-          <Route path="alerts" element={<AlertsScreen />} />
-          <Route path="plan" element={<PlanScreen />} />
-          <Route path="*" element={<ZoneScreen />} />
-        </Route>
-      </Routes>
+      <LocationProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<ZoneScreen />} />
+            <Route path="places" element={<PlacesScreen />} />
+            <Route path="alerts" element={<AlertsScreen />} />
+            <Route path="plan" element={<PlanScreen />} />
+            <Route path="*" element={<ZoneScreen />} />
+          </Route>
+        </Routes>
+      </LocationProvider>
     </HashRouter>
   );
 }

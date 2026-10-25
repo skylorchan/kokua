@@ -1,0 +1,188 @@
+{
+  "app": {
+    "name": "Kōkua",
+    "tagline": "夏威夷防災準備"
+  },
+  "a11y": {
+    "skipToContent": "跳到主要內容"
+  },
+  "nav": {
+    "label": "主選單",
+    "zone": "疏散區",
+    "places": "避難所",
+    "alerts": "警報",
+    "plan": "我的計畫"
+  },
+  "language": {
+    "label": "語言"
+  },
+  "status": {
+    "offline": "您目前離線。已儲存的資訊仍可使用。",
+    "offlineReady": "Kōkua 已可離線使用。",
+    "updateAvailable": "Kōkua 有新版本。",
+    "reload": "重新載入",
+    "dismiss": "關閉"
+  },
+  "i18n": {
+    "unreviewed": "由於此安全指示的翻譯尚未經過審核，因此以英文顯示。",
+    "unreviewedList": "由於這些安全項目的翻譯尚未經過審核，因此以英文顯示。",
+    "draftLanguage": "此翻譯為機器草稿，尚未經母語人士審核，部分用詞可能有誤。"
+  },
+  "screens": {
+    "zone": {
+      "title": "我在疏散區內嗎？",
+      "body": "將地點與海嘯疏散區比對。離線也能使用。",
+      "naturalWarningHeading": "海嘯的自然警訊",
+      "naturalWarningSource": "資料來源：美國國家氣象局海嘯安全指南"
+    },
+    "places": {
+      "title": "颶風避難所",
+      "body": "依直線距離列出歐胡島最近的官方颶風避難所。離線也能使用。",
+      "listLabel": "最近的地點",
+      "distance": "往{{dir}} {{km}} 公里（{{mi}} 英里）",
+      "outsideCoverage": "我們只有歐胡島的避難所資料。"
+    },
+    "alerts": {
+      "title": "天氣警報",
+      "body": "美國國家氣象局發布的夏威夷警報。最近一次的資料會保存在手機上，沒有訊號時也能閱讀。"
+    },
+    "plan": {
+      "title": "家庭緊急計畫",
+      "body": "寫下家人要在哪裡會合、要打給誰。所有資料只存在這支手機上。"
+    }
+  },
+  "safety": {
+    "naturalWarning": "如果感覺到強烈地震，或看到海水突然退去，請立即往內陸或高處移動。不要等待官方警報。",
+    "inZone": "只要發布任何海嘯警報，請立即離開此區域。盡量步行前往內陸或高處。",
+    "notInZone": "在地圖標示的疏散區以外不代表一定安全。請隨時遵從緊急應變官員的指示。",
+    "placesDisclaimer": "距離為直線距離，並非行車或步行路線。並非每個避難所在緊急情況下都會開放，出發前請先確認官方公告。",
+    "inZoneHeading": "您位於海嘯疏散區內",
+    "inExtremeHeading": "您位於極端海嘯疏散區內",
+    "inExtremeZone": "如果發布極端海嘯警報，或官員要求撤離，請立即離開此區域。盡量步行前往內陸或高處。",
+    "notInZoneHeading": "您位於地圖標示的海嘯疏散區以外",
+    "outsideCoverageHeading": "此地點不在我們疏散區資料的涵蓋範圍內，因此無法判斷。",
+    "alertsStale": "這些警報可能不是最新的。最新消息請收聽當地廣播、電視或 NOAA 氣象廣播。",
+    "kitWater": "飲用水：{{gallons}} 加侖（每人每天 1 加侖，共 {{days}} 天）",
+    "kitFood": "不需冷藏的食物，足夠 {{days}} 天",
+    "kitMeds": "{{days}} 天份的藥物及處方箋影本",
+    "kitFirstAid": "急救箱",
+    "kitRadio": "電池式或手搖式收音機",
+    "kitLight": "手電筒及備用電池",
+    "kitPower": "手機充電器及充飽電的行動電源",
+    "kitDocs": "身分證件、保險及重要文件的影本，裝在防水袋中",
+    "kitCash": "一些小面額現金",
+    "kitPets": "寵物的食物、水和用品",
+    "kitKnowZone": "確認您的住家、學校和工作地點是否位於海嘯疏散區內",
+    "kitOutOfArea": "選定一位全家人都能聯絡的島外聯絡人",
+    "printPlan": "印出一份並與防災包放在一起。手機可能會沒電。",
+    "refugeInfo": "颶風避難所是給沒有更安全去處的人的最後選擇。那裡沒有物資，請帶上您的防災包。如果您的住家是 1995 年或之後建造，且不在淹水及風暴潮區域內，待在家中可能更安全。",
+    "tsunamiNotRefuge": "發生海嘯時，不要前往避難所。請往內陸或高處移動，離開疏散區。"
+  },
+  "location": {
+    "heading": "您的位置",
+    "useMine": "使用我的位置",
+    "locating": "正在尋找您的位置…",
+    "denied": "位置存取已關閉。您可以改為輸入座標。",
+    "unavailable": "無法取得您的位置。您可以改為輸入座標。",
+    "unsupported": "此裝置無法分享位置。您可以改為輸入座標。",
+    "current": "正在檢查 {{lat}}, {{lon}}",
+    "manualHeading": "或輸入座標",
+    "lat": "緯度",
+    "lng": "經度",
+    "check": "檢查這些座標",
+    "invalid": "請輸入介於 -90 到 90 的緯度，以及介於 -180 到 180 的經度。"
+  },
+  "data": {
+    "loading": "正在載入地圖資料…",
+    "error": "無法載入地圖資料。請連線一次以下載資料。",
+    "sampleHeading": "僅為示範資料",
+    "sampleBody": "此清單為示範用途而編造，請勿用於安全決策。",
+    "sourceZones": "疏散區：{{source}}。下載於 {{date}}。",
+    "sourcePlaces": "地點：{{source}}。下載於 {{date}}。"
+  },
+  "zoneKind": {
+    "tsunami": "海嘯疏散區",
+    "extreme": "極端海嘯疏散區"
+  },
+  "placeKind": {
+    "hurricane-refuge": "颶風避難所"
+  },
+  "compass": {
+    "N": "北",
+    "NE": "東北",
+    "E": "東",
+    "SE": "東南",
+    "S": "南",
+    "SW": "西南",
+    "W": "西",
+    "NW": "西北"
+  },
+  "alerts": {
+    "updated": "{{age}}更新",
+    "refresh": "檢查新警報",
+    "refreshing": "檢查中…",
+    "offlineCached": "無法連線到美國國家氣象局。您看到的是最後儲存的資料。",
+    "neverLoaded": "尚未儲存任何警報。請連上網路一次以載入警報。",
+    "none": "截至 {{time}}，夏威夷目前沒有生效中的警報。",
+    "englishOnly": "警報內容由美國國家氣象局以英文發布。",
+    "until": "至 {{time}}",
+    "issued": "{{time}} 由 {{sender}} 發布",
+    "details": "完整內容",
+    "instructions": "應採取的行動",
+    "listLabel": "生效中的警報",
+    "sourceLink": "美國國家氣象局檀香山辦公室",
+    "severity": {
+      "Extreme": "極度嚴重",
+      "Severe": "嚴重",
+      "Moderate": "中度",
+      "Minor": "輕微",
+      "Unknown": "未註明嚴重程度"
+    }
+  },
+  "plan": {
+    "loading": "正在載入您的計畫…",
+    "privacy": "您的計畫只儲存在此裝置上，不會上傳。",
+    "saveFailed": "無法儲存在此裝置上。您的瀏覽器可能封鎖了儲存功能（例如無痕瀏覽）。",
+    "kitHeading": "防災用品",
+    "kitProgress": "已準備 {{done}} / {{total}} 項",
+    "people": "家中人數",
+    "kitSource": "資料來源：夏威夷州緊急事務管理局",
+    "meetHeading": "會合地點",
+    "meetBody": "選擇每個人都知道的地點，以防走散且電話不通。",
+    "meet": {
+      "nearHome": "住家附近",
+      "outsideNeighborhood": "社區以外",
+      "highGround": "海嘯時的高處"
+    },
+    "meetPlaceholder": {
+      "nearHome": "例如：街角的郵筒",
+      "outsideNeighborhood": "例如：School Street 上的圖書館",
+      "highGround": "例如：山坡上的公園"
+    },
+    "contactsHeading": "緊急聯絡人",
+    "contactsBody": "請加入一位島外的人。本地線路忙碌時，長途電話和簡訊通常仍可使用。",
+    "contactName": "姓名",
+    "contactPhone": "電話",
+    "contactRelation": "關係",
+    "contactRelationPlaceholder": "例如：住在茂宜島的阿姨",
+    "addContact": "新增聯絡人",
+    "remove": "移除",
+    "removeContact": "移除 {{name}}",
+    "notes": "備註",
+    "notesPlaceholder": "醫療需求、用藥、防災包放置地點…",
+    "shareHeading": "列印或分享",
+    "print": "列印計畫",
+    "showQr": "顯示 QR 碼",
+    "hideQr": "隱藏 QR 碼",
+    "qrPrivacy": "此 QR 碼包含上方的姓名、電話號碼和地點。請只與家人分享。",
+    "qrAlt": "包含會合地點和緊急聯絡人的 QR 碼",
+    "qrTooBig": "您的計畫太長，無法放入 QR 碼。請改用列印，或縮短備註。",
+    "printTitle": "我們家的緊急計畫"
+  },
+  "map": {
+    "label": "疏散區地圖。點一下地點即可檢查。",
+    "loading": "正在載入地圖…",
+    "unavailable": "此裝置無法顯示地圖。您仍可使用您的位置或輸入座標。",
+    "help": "點一下地圖即可檢查該地點。用兩根手指移動地圖。無法使用地圖？請使用您的位置或在下方輸入座標。地圖僅涵蓋歐胡島；疏散區涵蓋所有主要島嶼。"
+  }
+}

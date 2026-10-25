@@ -54,14 +54,20 @@ test('map tiles are served from the device in airplane mode', async ({ page, con
   ).toBeVisible();
 });
 
-test('no screen is wider than the phone', async ({ page }) => {
-  for (const path of ['./', './#/places', './#/alerts', './#/plan']) {
-    await page.goto(path);
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-    await page.waitForTimeout(300);
-    const overflow = await page.evaluate(
-      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
-    );
-    expect(overflow, path).toBe(0);
+const LANGS = ['en', 'haw', 'ilo', 'tl', 'ja', 'zh-Hant', 'ko', 'vi'];
+
+test('no screen is wider than the phone, in any language', async ({ page }) => {
+  for (const lang of LANGS) {
+    await page.addInitScript((l) => localStorage.setItem('kokua.language', l), lang);
+    for (const path of ['./', './#/places', './#/alerts', './#/plan']) {
+      await page.goto(path);
+      await expect(page.locator('html')).toHaveAttribute('lang', lang);
+      await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+      await page.waitForTimeout(200);
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      );
+      expect(overflow, `${lang} ${path}`).toBe(0);
+    }
   }
 });

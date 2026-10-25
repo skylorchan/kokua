@@ -1,0 +1,188 @@
+{
+  "app": {
+    "name": "Kōkua",
+    "tagline": "Panagsagana iti didigra para iti Hawaiʻi"
+  },
+  "a11y": {
+    "skipToContent": "Mapan iti kangrunaan a linaon"
+  },
+  "nav": {
+    "label": "Kangrunaan",
+    "zone": "Sona",
+    "places": "Pagkamangan",
+    "alerts": "Dagiti ballaag",
+    "plan": "Ti planok"
+  },
+  "language": {
+    "label": "Pagsasao"
+  },
+  "status": {
+    "offline": "Offline ka. Agandar latta dagiti naidulin nga impormasion.",
+    "offlineReady": "Nakasagana ti Kōkua nga agandar uray offline.",
+    "updateAvailable": "Adda baro a bersion ti Kōkua.",
+    "reload": "I-reload",
+    "dismiss": "Iserra"
+  },
+  "i18n": {
+    "unreviewed": "Naipakita iti Ingles daytoy a bilin para iti kinatalged gapu ta saan pay a narepaso ti patarusna.",
+    "unreviewedList": "Naipakita iti Ingles dagitoy a banag para iti kinatalged gapu ta saan pay a narepaso ti patarusda.",
+    "draftLanguage": "Daytoy a patarus ket burador nga inaramid ti makina ken saan pay a narepaso ti katutubo nga agsasao. Mabalin nga adda dagiti di umiso a balikas."
+  },
+  "screens": {
+    "zone": {
+      "title": "Adda kadi iti evacuation zone?",
+      "body": "Kitaen no ti maysa a lugar ket adda iti tsunami evacuation zone. Agandar daytoy uray offline.",
+      "naturalWarningHeading": "Dagiti natural a pagilasinan ti tsunami",
+      "naturalWarningSource": "Nagtaudan: Pagannurotan iti kinatalged iti tsunami ti National Weather Service"
+    },
+    "places": {
+      "title": "Pagkamangan iti bagyo",
+      "body": "Dagiti kaasitgan nga opisial a pagkamangan iti bagyo idiay Oʻahu, babaen ti diretso a kaadayo. Agandar daytoy uray offline.",
+      "listLabel": "Kaasitgan a lugar",
+      "distance": "{{km}} km ({{mi}} mi) nga agpa-{{dir}}",
+      "outsideCoverage": "Oʻahu laeng ti adda a datos mi kadagiti pagkamangan."
+    },
+    "alerts": {
+      "title": "Dagiti ballaag maipapan iti tiempo",
+      "body": "Dagiti ballaag para iti Hawaiʻi manipud iti National Weather Service. Agtalinaed iti teleponom ti kaudian a kopia, isu a mabasam latta uray awan ti signal."
+    },
+    "plan": {
+      "title": "Plano ti pamilia para iti emerhensia",
+      "body": "Isuratmo no sadino ti pagtitinnaruyan ti sangakabbalayan ken no siasino ti awagan. Agtalinaed amin iti daytoy a telepono."
+    }
+  },
+  "safety": {
+    "naturalWarning": "No makariknaka iti napigsa a gingined wenno makitam a bigla nga umatras ti baybay, umakarka a dagus iti uneg ti isla wenno iti nangato a lugar. Dika urayen ti opisial a ballaag.",
+    "inZone": "No adda aniaman a ballaag ti tsunami, pumanawka a dagus iti daytoy a sona. Mapanka iti uneg ti isla wenno iti nangato a lugar, magnaka no kabaelam.",
+    "notInZone": "Saan a garantia ti kinatalged ti kaadda iti ruar ti sona a naimapa. Kanayon a surotem dagiti bilin dagiti opisial ti emerhensia.",
+    "placesDisclaimer": "Diretso a kaadayo dagiti distansia, saan a dalan ti panagmaneho wenno panagna. Saan nga amin a pagkamangan ti maluktan iti tunggal emerhensia, isu a kitaem nga umuna dagiti opisial a pakaammo sakbay a mapanka.",
+    "inZoneHeading": "Adda ka iti tsunami evacuation zone",
+    "inExtremeHeading": "Adda ka iti extreme tsunami evacuation zone",
+    "inExtremeZone": "Pumanawka a dagus iti daytoy a sona no adda Extreme Tsunami Warning, wenno no ibilin dagiti opisial. Mapanka iti uneg ti isla wenno iti nangato a lugar, magnaka no kabaelam.",
+    "notInZoneHeading": "Adda ka iti ruar dagiti naimapa a tsunami evacuation zone",
+    "outsideCoverageHeading": "Adda daytoy a lugar iti ruar ti sakup ti datos mi, isu a saan mi a maibaga.",
+    "alertsStale": "Mabalin a daan dagitoy a ballaag. Para iti kabaruan, dumngegka iti lokal a radio wenno TV, wenno iti NOAA Weather Radio.",
+    "kitWater": "Danum: {{gallons}} galon (1 galon iti tunggal tao iti tunggal aldaw iti {{days}} nga aldaw)",
+    "kitFood": "Taraon a saan a masapul ti ref, umanay iti {{days}} nga aldaw",
+    "kitMeds": "Agas ken kopia dagiti reseta para iti {{days}} nga aldaw",
+    "kitFirstAid": "First aid kit",
+    "kitRadio": "Radio a de-baterya wenno de-pusipos",
+    "kitLight": "Flashlight ken ekstra a baterya",
+    "kitPower": "Charger ti telepono ken naikarga a power bank",
+    "kitDocs": "Kopia dagiti ID, insurance, ken napateg a papeles iti supot a saan a maserrekan ti danum",
+    "kitCash": "Bassit a kuarta a babassit ti balorna",
+    "kitPets": "Taraon, danum, ken gamit para kadagiti taraken",
+    "kitKnowZone": "Kitaen no ti balay, eskuela, ken trabahom ket adda iti tsunami evacuation zone",
+    "kitOutOfArea": "Agpili iti kontak iti ruar ti isla a maawagan ti amin iti sangakabbalayan",
+    "printPlan": "Agimprenta iti kopia ken idulinmo a kadua ti kit. Mabalin a maibus ti baterya ti telepono.",
+    "refugeInfo": "Maudi a pagpilian dagiti pagkamangan iti bagyo para kadagiti awan ti natalgedan a lugar. Awan ti suplay sadiay, isu nga itugotmo ti kit. No ti balaymo ket naibangon idi 1995 wenno kalpasanna ken saan nga adda iti lugar a malayusan wenno madanon ti storm surge, mabalin a natalgedan ti agtalinaed iti balay.",
+    "tsunamiNotRefuge": "No tsunami, dika mapan iti pagkamangan. Mapanka iti uneg ti isla wenno iti nangato a lugar, iti ruar ti evacuation zone."
+  },
+  "location": {
+    "heading": "Ti lokasionmo",
+    "useMine": "Usaren ti lokasionko",
+    "locating": "Birbirokek ti lokasionmo…",
+    "denied": "Naiddep ti access iti lokasion. Mabalinmo nga ikabil ketdi dagiti coordinates.",
+    "unavailable": "Saan a maala ti lokasionmo. Mabalinmo nga ikabil ketdi dagiti coordinates.",
+    "unsupported": "Saan a maibingay daytoy a device ti lokasionna. Mabalinmo nga ikabil ketdi dagiti coordinates.",
+    "current": "Kitkitaen ti {{lat}}, {{lon}}",
+    "manualHeading": "Wenno ikabil dagiti coordinates",
+    "lat": "Latitude",
+    "lng": "Longitude",
+    "check": "Kitaen dagitoy a coordinates",
+    "invalid": "Ikabil ti latitude manipud -90 agingga 90 ken longitude manipud -180 agingga 180."
+  },
+  "data": {
+    "loading": "Ik-ikargaek ti datos ti mapa…",
+    "error": "Saan a maikarga ti datos ti mapa. Kumonektaka iti maminsan tapno ma-download.",
+    "sampleHeading": "Datos a pagwadan laeng",
+    "sampleBody": "Inaramid laeng daytoy a listaan para iti pagwadan. Dimo usaren para kadagiti desision maipapan iti kinatalged.",
+    "sourceZones": "Dagiti sona: {{source}}. Na-download idi {{date}}.",
+    "sourcePlaces": "Dagiti lugar: {{source}}. Na-download idi {{date}}."
+  },
+  "zoneKind": {
+    "tsunami": "Tsunami evacuation zone",
+    "extreme": "Extreme tsunami evacuation zone"
+  },
+  "placeKind": {
+    "hurricane-refuge": "Pagkamangan iti bagyo"
+  },
+  "compass": {
+    "N": "amianan",
+    "NE": "amianan a daya",
+    "E": "daya",
+    "SE": "abagatan a daya",
+    "S": "abagatan",
+    "SW": "abagatan a laud",
+    "W": "laud",
+    "NW": "amianan a laud"
+  },
+  "alerts": {
+    "updated": "Na-update {{age}}",
+    "refresh": "Kitaen no adda baro a ballaag",
+    "refreshing": "Kitkitaen…",
+    "offlineCached": "Saan a madanon ti National Weather Service. Ti kaudian a naidulin a kopia ti makitkitam.",
+    "neverLoaded": "Awan pay ti naidulin a ballaag. Kumonektaka iti internet iti maminsan tapno maikarga dagitoy.",
+    "none": "Awan ti aktibo a ballaag para iti Hawaiʻi idi {{time}}.",
+    "englishOnly": "Manipud iti National Weather Service ti teksto ti ballaag, iti Ingles.",
+    "until": "Agingga {{time}}",
+    "issued": "Impablaak idi {{time}} ti {{sender}}",
+    "details": "Naan-anay a detalye",
+    "instructions": "Ania ti aramiden",
+    "listLabel": "Dagiti aktibo a ballaag",
+    "sourceLink": "National Weather Service Honolulu",
+    "severity": {
+      "Extreme": "Nakaro unay",
+      "Severe": "Nakaro",
+      "Moderate": "Katamtaman",
+      "Minor": "Nalag-an",
+      "Unknown": "Saan a nadakamat ti kinakaro"
+    }
+  },
+  "plan": {
+    "loading": "Ik-ikargaek ti planom…",
+    "privacy": "Iti daytoy laeng a device a naidulin ti planom. Awan ti mai-upload.",
+    "saveFailed": "Saan a maidulin iti daytoy a device. Mabalin a lappedan ti browsermo ti storage (kas pagarigan, iti private browsing).",
+    "kitHeading": "Kit ti suplay",
+    "kitProgress": "{{done}} iti {{total}} ti nakasagana",
+    "people": "Bilang dagiti tao iti sangakabbalayan",
+    "kitSource": "Nagtaudan: Hawaiʻi Emergency Management Agency",
+    "meetHeading": "Pagtitinnaruyan",
+    "meetBody": "Agpili kadagiti lugar nga ammo ti amin, tapno no agsisinakayo ken awan ti telepono.",
+    "meet": {
+      "nearHome": "Asideg ti balay",
+      "outsideNeighborhood": "Iti ruar ti purok",
+      "highGround": "Nangato a lugar para iti tsunami"
+    },
+    "meetPlaceholder": {
+      "nearHome": "kas pagarigan, ti mailbox iti suli",
+      "outsideNeighborhood": "kas pagarigan, ti biblioteka iti School Street",
+      "highGround": "kas pagarigan, ti parke iti ngato ti turod"
+    },
+    "contactsHeading": "Dagiti kontak iti emerhensia",
+    "contactsBody": "Iramanmo ti maysa a tao iti ruar ti isla. Masansan nga agandar dagiti long-distance a tawag ken text no okupado dagiti lokal a linia.",
+    "contactName": "Nagan",
+    "contactPhone": "Telepono",
+    "contactRelation": "Relasion",
+    "contactRelationPlaceholder": "kas pagarigan, Ikit idiay Maui",
+    "addContact": "Inayon ti kontak",
+    "remove": "Ikkaten",
+    "removeContact": "Ikkaten ni {{name}}",
+    "notes": "Dagiti nota",
+    "notesPlaceholder": "Masapul a medikal, agas, no sadino a naidulin ti kit…",
+    "shareHeading": "Imprenta wenno ibingay",
+    "print": "Imprenta ti plano",
+    "showQr": "Ipakita ti QR code",
+    "hideQr": "Ilemmeng ti QR code",
+    "qrPrivacy": "Adda iti daytoy a QR code dagiti nagan, numero ti telepono, ken lugar iti ngato. Ibingaymo laeng iti sangakabbalayan.",
+    "qrAlt": "QR code dagiti pagtitinnaruyan ken kontak iti emerhensia",
+    "qrTooBig": "Atiddog unay ti planom tapno maikabil iti QR code. Imprentam ketdi, wenno paababaem dagiti nota.",
+    "printTitle": "Ti plano ti sangakabbalayan mi para iti emerhensia"
+  },
+  "map": {
+    "label": "Mapa dagiti evacuation zone. I-tap ti maysa a lugar tapno makita.",
+    "loading": "Ik-ikargaek ti mapa…",
+    "unavailable": "Saan a maipakita ti mapa iti daytoy a device. Mabalinmo latta nga usaren ti lokasionmo wenno ikabil dagiti coordinates.",
+    "help": "I-tap ti mapa tapno kitaen ti maysa a lugar. Usarem ti dua a ramay tapno ikuti ti mapa. Saan a mausar ti mapa? Usarem ti lokasionmo wenno ikabil dagiti coordinates iti baba. Oʻahu laeng ti sakup ti mapa; amin a kangrunaan nga isla ti sakup dagiti sona."
+  }
+}

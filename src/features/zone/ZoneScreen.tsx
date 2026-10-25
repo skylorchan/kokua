@@ -26,7 +26,7 @@ function ZoneResultCard({ position, zones }: { position: Position; zones: ZoneCo
   if (result.status === 'not-in-zone') {
     return (
       <section className="card card-ok" aria-live="polite">
-        <SafeText k="safety.notInZoneHeading" as="h2" />
+        <SafeText k="safety.notInZoneHeading" as="h2" note={false} />
         <SafeText k="safety.notInZone" />
       </section>
     );
@@ -36,7 +36,11 @@ function ZoneResultCard({ position, zones }: { position: Position; zones: ZoneCo
   const inRegular = result.zones.some((z) => z.kind === 'tsunami');
   return (
     <section className="card card-danger" aria-live="polite">
-      <SafeText k={inRegular ? 'safety.inZoneHeading' : 'safety.inExtremeHeading'} as="h2" />
+      <SafeText
+        k={inRegular ? 'safety.inZoneHeading' : 'safety.inExtremeHeading'}
+        as="h2"
+        note={false}
+      />
       <ul>
         {result.zones.map((z) => (
           <li key={z.id}>

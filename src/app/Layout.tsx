@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { DraftLanguageNotice } from '../components/DraftLanguageNotice';
 import { LanguagePicker } from '../components/LanguagePicker';
 import { OfflineBanner } from '../components/OfflineBanner';
 import { UpdatePrompt } from '../components/UpdatePrompt';
@@ -25,6 +26,7 @@ export function Layout() {
         </div>
         <LanguagePicker />
       </header>
+      <DraftLanguageNotice />
       <OfflineBanner />
       <UpdatePrompt />
       <main id="main" tabIndex={-1}>

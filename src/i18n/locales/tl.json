@@ -1,0 +1,188 @@
+{
+  "app": {
+    "name": "Kōkua",
+    "tagline": "Paghahanda sa sakuna para sa Hawaiʻi"
+  },
+  "a11y": {
+    "skipToContent": "Lumaktaw sa pangunahing nilalaman"
+  },
+  "nav": {
+    "label": "Pangunahin",
+    "zone": "Zone",
+    "places": "Mga silungan",
+    "alerts": "Mga babala",
+    "plan": "Aking plano"
+  },
+  "language": {
+    "label": "Wika"
+  },
+  "status": {
+    "offline": "Offline ka. Gumagana pa rin ang naka-save na impormasyon.",
+    "offlineReady": "Handa nang gumana offline ang Kōkua.",
+    "updateAvailable": "May bagong bersyon ng Kōkua.",
+    "reload": "I-reload",
+    "dismiss": "Isara"
+  },
+  "i18n": {
+    "unreviewed": "Ipinapakita sa Ingles ang tagubiling pangkaligtasan na ito dahil hindi pa nasusuri ang pagsasalin nito.",
+    "unreviewedList": "Ipinapakita sa Ingles ang mga item na pangkaligtasan na ito dahil hindi pa nasusuri ang pagsasalin nila.",
+    "draftLanguage": "Ang pagsasaling ito ay burador na gawa ng makina at hindi pa nasusuri ng katutubong nagsasalita. Maaaring may maling salita."
+  },
+  "screens": {
+    "zone": {
+      "title": "Nasa evacuation zone ba ako?",
+      "body": "Tingnan kung ang isang lugar ay nasa tsunami evacuation zone. Gumagana ito offline.",
+      "naturalWarningHeading": "Mga likas na palatandaan ng tsunami",
+      "naturalWarningSource": "Pinagmulan: Gabay sa kaligtasan sa tsunami ng National Weather Service"
+    },
+    "places": {
+      "title": "Mga silungan sa bagyo",
+      "body": "Ang pinakamalapit na opisyal na silungan sa bagyo sa Oʻahu, ayon sa tuwid na layo. Gumagana ito offline.",
+      "listLabel": "Pinakamalapit na lugar",
+      "distance": "{{km}} km ({{mi}} mi) sa {{dir}}",
+      "outsideCoverage": "Para lamang sa Oʻahu ang datos namin ng mga silungan."
+    },
+    "alerts": {
+      "title": "Mga babala sa panahon",
+      "body": "Mga babala para sa Hawaiʻi mula sa National Weather Service. Nananatili sa telepono mo ang huling kopya, kaya mababasa mo pa rin ito kahit walang signal."
+    },
+    "plan": {
+      "title": "Plano ng pamilya sa emerhensiya",
+      "body": "Isulat kung saan magkikita ang inyong sambahayan at kung sino ang tatawagan. Nananatili ang lahat sa teleponong ito."
+    }
+  },
+  "safety": {
+    "naturalWarning": "Kung makaramdam ka ng malakas na lindol o makita mong biglang umurong ang dagat, lumipat agad sa loob ng isla o sa mataas na lugar. Huwag nang hintayin ang opisyal na babala.",
+    "inZone": "Kapag may anumang babala ng tsunami, umalis agad sa zone na ito. Pumunta sa loob ng isla o sa mataas na lugar, maglakad kung kaya.",
+    "notInZone": "Hindi garantiya ng kaligtasan ang pagiging nasa labas ng naka-mapang zone. Laging sundin ang mga tagubilin ng mga opisyal sa emerhensiya.",
+    "placesDisclaimer": "Tuwid na layo ang mga distansya, hindi ruta ng pagmamaneho o paglalakad. Hindi lahat ng silungan ay binubuksan sa bawat emerhensiya, kaya tingnan muna ang opisyal na anunsyo bago pumunta.",
+    "inZoneHeading": "Nasa tsunami evacuation zone ka",
+    "inExtremeHeading": "Nasa extreme tsunami evacuation zone ka",
+    "inExtremeZone": "Umalis agad sa zone na ito kapag may Extreme Tsunami Warning, o kapag sinabi ng mga opisyal. Pumunta sa loob ng isla o sa mataas na lugar, maglakad kung kaya.",
+    "notInZoneHeading": "Nasa labas ka ng mga naka-mapang tsunami evacuation zone",
+    "outsideCoverageHeading": "Nasa labas ng saklaw ng aming datos ang lugar na ito, kaya hindi namin masasabi.",
+    "alertsStale": "Maaaring luma na ang mga babalang ito. Para sa pinakabago, makinig sa lokal na radyo o TV, o sa NOAA Weather Radio.",
+    "kitWater": "Tubig: {{gallons}} galon (1 galon bawat tao bawat araw sa loob ng {{days}} araw)",
+    "kitFood": "Pagkaing hindi kailangan ng ref, sapat para sa {{days}} araw",
+    "kitMeds": "Mga gamot at kopya ng reseta para sa {{days}} araw",
+    "kitFirstAid": "First aid kit",
+    "kitRadio": "Radyong de-baterya o de-pihit",
+    "kitLight": "Mga flashlight at ekstrang baterya",
+    "kitPower": "Mga charger ng telepono at naka-charge na power bank",
+    "kitDocs": "Mga kopya ng ID, insurance, at mahahalagang papeles sa lalagyang hindi tinatagusan ng tubig",
+    "kitCash": "Kaunting cash na maliliit na halaga",
+    "kitPets": "Pagkain, tubig, at gamit para sa mga alagang hayop",
+    "kitKnowZone": "Alamin kung ang bahay, paaralan, at trabaho mo ay nasa tsunami evacuation zone",
+    "kitOutOfArea": "Pumili ng contact sa labas ng isla na matatawagan ng lahat sa sambahayan",
+    "printPlan": "Mag-print ng kopya at itabi kasama ng iyong kit. Maaaring maubusan ng baterya ang telepono.",
+    "refugeInfo": "Huling opsyon ang mga silungan sa bagyo para sa mga walang mas ligtas na lugar. Walang suplay doon, kaya dalhin ang iyong kit. Kung ang bahay mo ay itinayo noong 1995 o pagkatapos at wala sa lugar na binabaha o inaabot ng storm surge, maaaring mas ligtas manatili sa bahay.",
+    "tsunamiNotRefuge": "Kapag tsunami, huwag pumunta sa silungan. Pumunta sa loob ng isla o sa mataas na lugar, palabas ng evacuation zone."
+  },
+  "location": {
+    "heading": "Iyong lokasyon",
+    "useMine": "Gamitin ang aking lokasyon",
+    "locating": "Hinahanap ang iyong lokasyon…",
+    "denied": "Naka-off ang access sa lokasyon. Maaari kang maglagay ng coordinates sa halip.",
+    "unavailable": "Hindi makuha ang iyong lokasyon. Maaari kang maglagay ng coordinates sa halip.",
+    "unsupported": "Hindi maibahagi ng device na ito ang lokasyon nito. Maaari kang maglagay ng coordinates sa halip.",
+    "current": "Tinitingnan ang {{lat}}, {{lon}}",
+    "manualHeading": "O maglagay ng coordinates",
+    "lat": "Latitude",
+    "lng": "Longitude",
+    "check": "Tingnan ang mga coordinates na ito",
+    "invalid": "Maglagay ng latitude mula -90 hanggang 90 at longitude mula -180 hanggang 180."
+  },
+  "data": {
+    "loading": "Nilo-load ang datos ng mapa…",
+    "error": "Hindi ma-load ang datos ng mapa. Kumonekta nang isang beses para ma-download ito.",
+    "sampleHeading": "Demo na datos lamang",
+    "sampleBody": "Gawa-gawa lamang ang listahang ito para sa demonstrasyon. Huwag itong gamitin sa mga desisyong pangkaligtasan.",
+    "sourceZones": "Mga zone: {{source}}. Na-download noong {{date}}.",
+    "sourcePlaces": "Mga lugar: {{source}}. Na-download noong {{date}}."
+  },
+  "zoneKind": {
+    "tsunami": "Tsunami evacuation zone",
+    "extreme": "Extreme tsunami evacuation zone"
+  },
+  "placeKind": {
+    "hurricane-refuge": "Silungan sa bagyo"
+  },
+  "compass": {
+    "N": "hilaga",
+    "NE": "hilagang-silangan",
+    "E": "silangan",
+    "SE": "timog-silangan",
+    "S": "timog",
+    "SW": "timog-kanluran",
+    "W": "kanluran",
+    "NW": "hilagang-kanluran"
+  },
+  "alerts": {
+    "updated": "Na-update {{age}}",
+    "refresh": "Tingnan kung may bagong babala",
+    "refreshing": "Tinitingnan…",
+    "offlineCached": "Hindi maabot ang National Weather Service. Ang huling naka-save na kopya ang nakikita mo.",
+    "neverLoaded": "Wala pang naka-save na babala. Kumonekta sa internet nang isang beses para ma-load ang mga ito.",
+    "none": "Walang aktibong babala para sa Hawaiʻi noong {{time}}.",
+    "englishOnly": "Galing sa National Weather Service ang teksto ng babala, sa Ingles.",
+    "until": "Hanggang {{time}}",
+    "issued": "Inilabas {{time}} ng {{sender}}",
+    "details": "Buong detalye",
+    "instructions": "Ano ang gagawin",
+    "listLabel": "Mga aktibong babala",
+    "sourceLink": "National Weather Service Honolulu",
+    "severity": {
+      "Extreme": "Napakatindi",
+      "Severe": "Matindi",
+      "Moderate": "Katamtaman",
+      "Minor": "Mahina",
+      "Unknown": "Hindi tinukoy ang tindi"
+    }
+  },
+  "plan": {
+    "loading": "Nilo-load ang iyong plano…",
+    "privacy": "Sa device na ito lamang naka-save ang iyong plano. Walang ina-upload.",
+    "saveFailed": "Hindi ma-save sa device na ito. Maaaring hinaharangan ng browser mo ang storage (halimbawa, sa private browsing).",
+    "kitHeading": "Kit ng suplay",
+    "kitProgress": "{{done}} sa {{total}} ang handa na",
+    "people": "Bilang ng tao sa sambahayan",
+    "kitSource": "Pinagmulan: Hawaiʻi Emergency Management Agency",
+    "meetHeading": "Mga lugar na pagkikitaan",
+    "meetBody": "Pumili ng mga lugar na alam ng lahat, sakaling magkahiwa-hiwalay kayo at walang linya ng telepono.",
+    "meet": {
+      "nearHome": "Malapit sa bahay",
+      "outsideNeighborhood": "Sa labas ng kapitbahayan",
+      "highGround": "Mataas na lugar kapag may tsunami"
+    },
+    "meetPlaceholder": {
+      "nearHome": "hal. ang mailbox sa kanto",
+      "outsideNeighborhood": "hal. ang aklatan sa School Street",
+      "highGround": "hal. ang parke sa itaas ng burol"
+    },
+    "contactsHeading": "Mga contact sa emerhensiya",
+    "contactsBody": "Isama ang isang tao sa labas ng isla. Madalas gumagana ang long-distance na tawag at text kapag abala ang lokal na linya.",
+    "contactName": "Pangalan",
+    "contactPhone": "Telepono",
+    "contactRelation": "Kaugnayan",
+    "contactRelationPlaceholder": "hal. Tita sa Maui",
+    "addContact": "Magdagdag ng contact",
+    "remove": "Alisin",
+    "removeContact": "Alisin si {{name}}",
+    "notes": "Mga tala",
+    "notesPlaceholder": "Pangangailangang medikal, mga gamot, kung saan nakatago ang kit…",
+    "shareHeading": "I-print o ibahagi",
+    "print": "I-print ang plano",
+    "showQr": "Ipakita ang QR code",
+    "hideQr": "Itago ang QR code",
+    "qrPrivacy": "Nasa QR code na ito ang mga pangalan, numero ng telepono, at lugar sa itaas. Ibahagi lamang ito sa inyong sambahayan.",
+    "qrAlt": "QR code ng inyong mga lugar na pagkikitaan at contact sa emerhensiya",
+    "qrTooBig": "Masyadong mahaba ang plano mo para magkasya sa QR code. Mag-print na lang, o paikliin ang mga tala.",
+    "printTitle": "Plano ng aming sambahayan sa emerhensiya"
+  },
+  "map": {
+    "label": "Mapa ng mga evacuation zone. I-tap ang isang lugar para tingnan ito.",
+    "loading": "Nilo-load ang mapa…",
+    "unavailable": "Hindi maipakita ang mapa sa device na ito. Magagamit mo pa rin ang iyong lokasyon o maglagay ng coordinates.",
+    "help": "I-tap ang mapa para tingnan ang isang lugar. Gumamit ng dalawang daliri para igalaw ang mapa. Hindi magamit ang mapa? Gamitin ang iyong lokasyon o maglagay ng coordinates sa ibaba. Oʻahu lamang ang saklaw ng mapa; lahat ng pangunahing isla ang saklaw ng mga zone."
+  }
+}

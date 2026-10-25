@@ -64,6 +64,17 @@ describe('translation files', () => {
     }
   });
 
+  it.each(others)('%s keeps every {{placeholder}} from English', (lang) => {
+    // A dropped {{gallons}} or {{time}} would silently remove a number from the screen.
+    const vars = (s: string) =>
+      (s.match(/{{\s*\w+\s*}}/g) ?? []).map((v) => v.replace(/\s/g, '')).sort();
+    const translated = flatten(locales[lang]!);
+    const wrong = Object.keys(en).filter(
+      (k) => JSON.stringify(vars(en[k]!)) !== JSON.stringify(vars(translated[k] ?? '')),
+    );
+    expect(wrong).toEqual([]);
+  });
+
   it('keeps all safety-critical text under the safety.* namespace', () => {
     expect(Object.keys(en).some((k) => k.startsWith('safety.'))).toBe(true);
   });

@@ -25,7 +25,8 @@
   },
   "i18n": {
     "unreviewed": "This safety instruction is shown in English because its translation has not been reviewed yet.",
-    "unreviewedList": "These safety items are shown in English because their translations have not been reviewed yet."
+    "unreviewedList": "These safety items are shown in English because their translations have not been reviewed yet.",
+    "draftLanguage": "This translation is a machine draft that a native speaker has not checked yet. Some words may be wrong."
   },
   "screens": {
     "zone": {
@@ -84,7 +85,7 @@
     "denied": "Location access is turned off. You can enter coordinates instead.",
     "unavailable": "Couldn't get your location. You can enter coordinates instead.",
     "unsupported": "This device can't share its location. You can enter coordinates instead.",
-    "current": "Checking {{lat}}, {{lng}}",
+    "current": "Checking {{lat}}, {{lon}}",
     "manualHeading": "Or enter coordinates",
     "lat": "Latitude",
     "lng": "Longitude",
@@ -104,9 +105,6 @@
     "extreme": "Extreme tsunami evacuation zone"
   },
   "placeKind": {
-    "shelter": "Emergency shelter",
-    "refuge": "Refuge area",
-    "assembly": "Assembly point",
     "hurricane-refuge": "Hurricane refuge area"
   },
   "compass": {

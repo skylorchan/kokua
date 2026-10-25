@@ -1,7 +1,7 @@
 import { bearingDegrees, compassDirection, haversineMeters, type Compass } from './distance';
 import type { Feature, FeatureCollection, Position } from './types';
 
-export type PlaceKind = 'hurricane-refuge' | 'shelter' | 'refuge' | 'assembly';
+export type PlaceKind = 'hurricane-refuge';
 export type PlaceProps = { id: string; name: string; kind: PlaceKind; address?: string };
 export type PlaceFeature = Feature<{ type: 'Point'; coordinates: Position }, PlaceProps>;
 export type PlaceCollection = FeatureCollection<PlaceFeature>;

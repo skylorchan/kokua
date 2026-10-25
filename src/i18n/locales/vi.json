@@ -1,0 +1,188 @@
+{
+  "app": {
+    "name": "Kōkua",
+    "tagline": "Chuẩn bị ứng phó thiên tai cho Hawaiʻi"
+  },
+  "a11y": {
+    "skipToContent": "Chuyển đến nội dung chính"
+  },
+  "nav": {
+    "label": "Trình đơn chính",
+    "zone": "Vùng sơ tán",
+    "places": "Nơi trú ẩn",
+    "alerts": "Cảnh báo",
+    "plan": "Kế hoạch"
+  },
+  "language": {
+    "label": "Ngôn ngữ"
+  },
+  "status": {
+    "offline": "Bạn đang ngoại tuyến. Thông tin đã lưu vẫn dùng được.",
+    "offlineReady": "Kōkua đã sẵn sàng dùng ngoại tuyến.",
+    "updateAvailable": "Đã có phiên bản Kōkua mới.",
+    "reload": "Tải lại",
+    "dismiss": "Đóng"
+  },
+  "i18n": {
+    "unreviewed": "Hướng dẫn an toàn này được hiển thị bằng tiếng Anh vì bản dịch chưa được kiểm tra.",
+    "unreviewedList": "Các mục an toàn này được hiển thị bằng tiếng Anh vì bản dịch chưa được kiểm tra.",
+    "draftLanguage": "Bản dịch này là bản nháp do máy tạo và chưa được người bản ngữ kiểm tra. Một số từ có thể sai."
+  },
+  "screens": {
+    "zone": {
+      "title": "Tôi có ở trong vùng sơ tán không?",
+      "body": "Kiểm tra một vị trí có nằm trong vùng sơ tán sóng thần hay không. Dùng được khi ngoại tuyến.",
+      "naturalWarningHeading": "Dấu hiệu tự nhiên của sóng thần",
+      "naturalWarningSource": "Nguồn: Hướng dẫn an toàn sóng thần của Cơ quan Khí tượng Quốc gia Hoa Kỳ"
+    },
+    "places": {
+      "title": "Nơi trú bão",
+      "body": "Các nơi trú bão chính thức gần nhất trên Oʻahu, tính theo đường chim bay. Dùng được khi ngoại tuyến.",
+      "listLabel": "Địa điểm gần nhất",
+      "distance": "{{km}} km ({{mi}} dặm) về hướng {{dir}}",
+      "outsideCoverage": "Chúng tôi chỉ có dữ liệu nơi trú bão cho Oʻahu."
+    },
+    "alerts": {
+      "title": "Cảnh báo thời tiết",
+      "body": "Cảnh báo cho Hawaiʻi từ Cơ quan Khí tượng Quốc gia. Bản mới nhất được lưu trên điện thoại để bạn vẫn đọc được khi không có sóng."
+    },
+    "plan": {
+      "title": "Kế hoạch khẩn cấp của gia đình",
+      "body": "Ghi lại nơi cả nhà sẽ gặp nhau và cần gọi cho ai. Mọi thứ chỉ được lưu trên điện thoại này."
+    }
+  },
+  "safety": {
+    "naturalWarning": "Nếu bạn cảm thấy động đất mạnh hoặc thấy nước biển đột ngột rút xa, hãy lập tức di chuyển vào đất liền hoặc lên chỗ cao. Đừng chờ cảnh báo chính thức.",
+    "inZone": "Nếu có bất kỳ cảnh báo sóng thần nào, hãy rời khỏi vùng này ngay. Đi vào đất liền hoặc lên chỗ cao, đi bộ nếu có thể.",
+    "notInZone": "Ở ngoài vùng trên bản đồ không có nghĩa là chắc chắn an toàn. Luôn làm theo hướng dẫn của nhà chức trách.",
+    "placesDisclaimer": "Khoảng cách là đường chim bay, không phải đường lái xe hay đi bộ. Không phải nơi trú bão nào cũng mở khi có thiên tai, vì vậy hãy xem thông báo chính thức trước khi đi.",
+    "inZoneHeading": "Bạn đang ở trong vùng sơ tán sóng thần",
+    "inExtremeHeading": "Bạn đang ở trong vùng sơ tán sóng thần cực lớn",
+    "inExtremeZone": "Hãy rời khỏi vùng này ngay nếu có Cảnh báo Sóng thần Cực lớn hoặc khi nhà chức trách yêu cầu. Đi vào đất liền hoặc lên chỗ cao, đi bộ nếu có thể.",
+    "notInZoneHeading": "Bạn đang ở ngoài các vùng sơ tán sóng thần trên bản đồ",
+    "outsideCoverageHeading": "Vị trí này nằm ngoài phạm vi dữ liệu vùng của chúng tôi, nên không thể xác định.",
+    "alertsStale": "Các cảnh báo này có thể đã cũ. Để biết tin mới nhất, hãy nghe đài hoặc TV địa phương, hoặc NOAA Weather Radio.",
+    "kitWater": "Nước: {{gallons}} gallon (1 gallon mỗi người mỗi ngày trong {{days}} ngày)",
+    "kitFood": "Thực phẩm không cần tủ lạnh, đủ cho {{days}} ngày",
+    "kitMeds": "Thuốc và bản sao đơn thuốc cho {{days}} ngày",
+    "kitFirstAid": "Bộ sơ cứu",
+    "kitRadio": "Đài chạy pin hoặc quay tay",
+    "kitLight": "Đèn pin và pin dự phòng",
+    "kitPower": "Sạc điện thoại và pin dự phòng đã sạc đầy",
+    "kitDocs": "Bản sao giấy tờ tùy thân, bảo hiểm và giấy tờ quan trọng trong túi chống nước",
+    "kitCash": "Một ít tiền mặt mệnh giá nhỏ",
+    "kitPets": "Thức ăn, nước và đồ dùng cho thú cưng",
+    "kitKnowZone": "Kiểm tra xem nhà, trường và nơi làm việc có nằm trong vùng sơ tán sóng thần không",
+    "kitOutOfArea": "Chọn một người liên lạc ở ngoài đảo mà cả nhà đều gọi được",
+    "printPlan": "In một bản và để cùng bộ đồ dự phòng. Điện thoại có thể hết pin.",
+    "refugeInfo": "Nơi trú bão là lựa chọn cuối cùng cho người không có nơi nào an toàn hơn. Ở đó không có đồ tiếp tế, vì vậy hãy mang theo bộ đồ dự phòng. Nếu nhà bạn được xây từ năm 1995 trở về sau và không nằm trong vùng ngập lụt hay nước dâng do bão, ở nhà có thể an toàn hơn.",
+    "tsunamiNotRefuge": "Khi có sóng thần, đừng đến nơi trú bão. Hãy đi vào đất liền hoặc lên chỗ cao, ra khỏi vùng sơ tán."
+  },
+  "location": {
+    "heading": "Vị trí của bạn",
+    "useMine": "Dùng vị trí của tôi",
+    "locating": "Đang tìm vị trí của bạn…",
+    "denied": "Quyền truy cập vị trí đang tắt. Bạn có thể nhập tọa độ thay thế.",
+    "unavailable": "Không lấy được vị trí của bạn. Bạn có thể nhập tọa độ thay thế.",
+    "unsupported": "Thiết bị này không chia sẻ được vị trí. Bạn có thể nhập tọa độ thay thế.",
+    "current": "Đang kiểm tra {{lat}}, {{lon}}",
+    "manualHeading": "Hoặc nhập tọa độ",
+    "lat": "Vĩ độ",
+    "lng": "Kinh độ",
+    "check": "Kiểm tra tọa độ này",
+    "invalid": "Nhập vĩ độ từ -90 đến 90 và kinh độ từ -180 đến 180."
+  },
+  "data": {
+    "loading": "Đang tải dữ liệu bản đồ…",
+    "error": "Không tải được dữ liệu bản đồ. Hãy kết nối mạng một lần để tải về.",
+    "sampleHeading": "Chỉ là dữ liệu mẫu",
+    "sampleBody": "Danh sách này được tạo ra để minh họa. Đừng dùng nó để đưa ra quyết định về an toàn.",
+    "sourceZones": "Vùng: {{source}}. Tải về ngày {{date}}.",
+    "sourcePlaces": "Địa điểm: {{source}}. Tải về ngày {{date}}."
+  },
+  "zoneKind": {
+    "tsunami": "Vùng sơ tán sóng thần",
+    "extreme": "Vùng sơ tán sóng thần cực lớn"
+  },
+  "placeKind": {
+    "hurricane-refuge": "Nơi trú bão"
+  },
+  "compass": {
+    "N": "bắc",
+    "NE": "đông bắc",
+    "E": "đông",
+    "SE": "đông nam",
+    "S": "nam",
+    "SW": "tây nam",
+    "W": "tây",
+    "NW": "tây bắc"
+  },
+  "alerts": {
+    "updated": "Cập nhật {{age}}",
+    "refresh": "Kiểm tra cảnh báo mới",
+    "refreshing": "Đang kiểm tra…",
+    "offlineCached": "Không kết nối được với Cơ quan Khí tượng Quốc gia. Bạn đang xem bản lưu gần nhất.",
+    "neverLoaded": "Chưa có cảnh báo nào được lưu. Hãy kết nối mạng một lần để tải.",
+    "none": "Không có cảnh báo nào đang hiệu lực cho Hawaiʻi tính đến {{time}}.",
+    "englishOnly": "Nội dung cảnh báo do Cơ quan Khí tượng Quốc gia phát hành bằng tiếng Anh.",
+    "until": "Đến {{time}}",
+    "issued": "Phát hành lúc {{time}} bởi {{sender}}",
+    "details": "Chi tiết đầy đủ",
+    "instructions": "Cần làm gì",
+    "listLabel": "Cảnh báo đang hiệu lực",
+    "sourceLink": "Cơ quan Khí tượng Quốc gia tại Honolulu",
+    "severity": {
+      "Extreme": "Cực kỳ nghiêm trọng",
+      "Severe": "Nghiêm trọng",
+      "Moderate": "Trung bình",
+      "Minor": "Nhẹ",
+      "Unknown": "Không nêu mức độ"
+    }
+  },
+  "plan": {
+    "loading": "Đang tải kế hoạch của bạn…",
+    "privacy": "Kế hoạch chỉ được lưu trên thiết bị này. Không có gì được tải lên.",
+    "saveFailed": "Không lưu được trên thiết bị này. Trình duyệt có thể đang chặn bộ nhớ (ví dụ, khi duyệt riêng tư).",
+    "kitHeading": "Đồ dùng dự phòng",
+    "kitProgress": "Đã chuẩn bị {{done}}/{{total}}",
+    "people": "Số người trong nhà",
+    "kitSource": "Nguồn: Cơ quan Quản lý Khẩn cấp Hawaiʻi",
+    "meetHeading": "Nơi gặp nhau",
+    "meetBody": "Chọn những nơi ai cũng biết, phòng khi bị lạc nhau và điện thoại không dùng được.",
+    "meet": {
+      "nearHome": "Gần nhà",
+      "outsideNeighborhood": "Ngoài khu phố",
+      "highGround": "Chỗ cao khi có sóng thần"
+    },
+    "meetPlaceholder": {
+      "nearHome": "ví dụ: hộp thư ở góc đường",
+      "outsideNeighborhood": "ví dụ: thư viện trên School Street",
+      "highGround": "ví dụ: công viên trên đồi"
+    },
+    "contactsHeading": "Liên lạc khẩn cấp",
+    "contactsBody": "Hãy thêm một người ở ngoài đảo. Cuộc gọi đường dài và tin nhắn thường vẫn hoạt động khi đường dây địa phương bị nghẽn.",
+    "contactName": "Tên",
+    "contactPhone": "Điện thoại",
+    "contactRelation": "Mối quan hệ",
+    "contactRelationPlaceholder": "ví dụ: Dì ở Maui",
+    "addContact": "Thêm liên lạc",
+    "remove": "Xóa",
+    "removeContact": "Xóa {{name}}",
+    "notes": "Ghi chú",
+    "notesPlaceholder": "Nhu cầu y tế, thuốc đang dùng, nơi cất đồ dự phòng…",
+    "shareHeading": "In hoặc chia sẻ",
+    "print": "In kế hoạch",
+    "showQr": "Hiện mã QR",
+    "hideQr": "Ẩn mã QR",
+    "qrPrivacy": "Mã QR này chứa tên, số điện thoại và địa điểm ở trên. Chỉ chia sẻ với người trong nhà.",
+    "qrAlt": "Mã QR chứa nơi gặp nhau và liên lạc khẩn cấp của bạn",
+    "qrTooBig": "Kế hoạch quá dài để vừa trong mã QR. Hãy in ra, hoặc rút ngắn ghi chú.",
+    "printTitle": "Kế hoạch khẩn cấp của gia đình chúng tôi"
+  },
+  "map": {
+    "label": "Bản đồ vùng sơ tán. Chạm vào một điểm để kiểm tra.",
+    "loading": "Đang tải bản đồ…",
+    "unavailable": "Không thể hiển thị bản đồ trên thiết bị này. Bạn vẫn có thể dùng vị trí hoặc nhập tọa độ.",
+    "help": "Chạm vào bản đồ để kiểm tra một điểm. Dùng hai ngón tay để di chuyển bản đồ. Không dùng được bản đồ? Hãy dùng vị trí của bạn hoặc nhập tọa độ bên dưới. Bản đồ chỉ có Oʻahu; dữ liệu vùng có tất cả các đảo chính."
+  }
+}

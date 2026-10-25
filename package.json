@@ -19,7 +19,8 @@
     "test:watch": "vitest",
     "e2e": "playwright test",
     "i18n:sync": "node scripts/i18n-sync-status.mjs",
-    "data:fetch": "node scripts/data/fetch-zones.mjs && node scripts/data/fetch-places.mjs"
+    "data:fetch": "node scripts/data/fetch-zones.mjs && node scripts/data/fetch-places.mjs",
+    "i18n:new": "node scripts/i18n-new-language.mjs"
   },
   "dependencies": {
     "@protomaps/basemaps": "^5.7.2",

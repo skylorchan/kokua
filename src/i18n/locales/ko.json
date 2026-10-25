@@ -1,0 +1,188 @@
+{
+  "app": {
+    "name": "Kōkua",
+    "tagline": "하와이 재난 대비"
+  },
+  "a11y": {
+    "skipToContent": "본문으로 건너뛰기"
+  },
+  "nav": {
+    "label": "메인 메뉴",
+    "zone": "대피 구역",
+    "places": "대피소",
+    "alerts": "경보",
+    "plan": "내 계획"
+  },
+  "language": {
+    "label": "언어"
+  },
+  "status": {
+    "offline": "오프라인 상태입니다. 저장된 정보는 계속 사용할 수 있습니다.",
+    "offlineReady": "Kōkua를 오프라인에서 사용할 수 있습니다.",
+    "updateAvailable": "Kōkua의 새 버전이 있습니다.",
+    "reload": "새로고침",
+    "dismiss": "닫기"
+  },
+  "i18n": {
+    "unreviewed": "이 안전 안내는 번역이 아직 검토되지 않아 영어로 표시됩니다.",
+    "unreviewedList": "이 안전 항목들은 번역이 아직 검토되지 않아 영어로 표시됩니다.",
+    "draftLanguage": "이 번역은 기계로 작성한 초안이며 아직 원어민의 검토를 받지 않았습니다. 일부 단어가 틀릴 수 있습니다."
+  },
+  "screens": {
+    "zone": {
+      "title": "내가 대피 구역에 있나요?",
+      "body": "위치가 쓰나미 대피 구역에 있는지 확인합니다. 오프라인에서도 작동합니다.",
+      "naturalWarningHeading": "쓰나미의 자연적 징후",
+      "naturalWarningSource": "출처: 미국 국립기상청 쓰나미 안전 지침"
+    },
+    "places": {
+      "title": "허리케인 대피소",
+      "body": "오아후의 공식 허리케인 대피소 중 직선거리로 가장 가까운 곳입니다. 오프라인에서도 작동합니다.",
+      "listLabel": "가장 가까운 장소",
+      "distance": "{{dir}}쪽으로 {{km}}km({{mi}}마일)",
+      "outsideCoverage": "대피소 데이터는 오아후만 있습니다."
+    },
+    "alerts": {
+      "title": "기상 경보",
+      "body": "미국 국립기상청이 발표한 하와이 경보입니다. 마지막으로 받은 내용이 휴대폰에 저장되어 신호가 없어도 읽을 수 있습니다."
+    },
+    "plan": {
+      "title": "가족 비상 계획",
+      "body": "가족이 어디에서 만날지, 누구에게 연락할지 적어 두세요. 모든 내용은 이 휴대폰에만 저장됩니다."
+    }
+  },
+  "safety": {
+    "naturalWarning": "강한 지진을 느끼거나 바닷물이 갑자기 빠지는 것을 보면 즉시 내륙이나 높은 곳으로 이동하세요. 공식 경보를 기다리지 마세요.",
+    "inZone": "쓰나미 경보가 발령되면 즉시 이 구역을 떠나세요. 가능하면 걸어서 내륙이나 높은 곳으로 가세요.",
+    "notInZone": "지도에 표시된 구역 밖에 있다고 해서 안전이 보장되지는 않습니다. 항상 비상 당국의 지시를 따르세요.",
+    "placesDisclaimer": "거리는 직선거리이며 운전이나 도보 경로가 아닙니다. 비상시에 모든 대피소가 열리는 것은 아니므로 가기 전에 공식 발표를 확인하세요.",
+    "inZoneHeading": "쓰나미 대피 구역 안에 있습니다",
+    "inExtremeHeading": "극한 쓰나미 대피 구역 안에 있습니다",
+    "inExtremeZone": "극한 쓰나미 경보가 발령되거나 당국이 지시하면 즉시 이 구역을 떠나세요. 가능하면 걸어서 내륙이나 높은 곳으로 가세요.",
+    "notInZoneHeading": "지도에 표시된 쓰나미 대피 구역 밖에 있습니다",
+    "outsideCoverageHeading": "이 위치는 구역 데이터가 다루는 범위 밖이라 판단할 수 없습니다.",
+    "alertsStale": "이 경보는 최신이 아닐 수 있습니다. 최신 정보는 지역 라디오, TV 또는 NOAA 기상 라디오를 들으세요.",
+    "kitWater": "물: {{gallons}}갤런(1인당 하루 1갤런, {{days}}일분)",
+    "kitFood": "냉장이 필요 없는 음식 {{days}}일분",
+    "kitMeds": "{{days}}일분의 약과 처방전 사본",
+    "kitFirstAid": "구급상자",
+    "kitRadio": "건전지식 또는 수동 충전식 라디오",
+    "kitLight": "손전등과 여분의 건전지",
+    "kitPower": "휴대폰 충전기와 충전된 보조 배터리",
+    "kitDocs": "신분증, 보험, 중요 서류 사본(방수 봉투에 보관)",
+    "kitCash": "소액 지폐로 된 현금 약간",
+    "kitPets": "반려동물용 음식, 물, 용품",
+    "kitKnowZone": "집, 학교, 직장이 쓰나미 대피 구역에 있는지 확인하기",
+    "kitOutOfArea": "가족 모두가 연락할 수 있는 섬 밖의 연락처 정하기",
+    "printPlan": "한 부 인쇄해서 비상용품과 함께 보관하세요. 휴대폰은 배터리가 떨어질 수 있습니다.",
+    "refugeInfo": "허리케인 대피소는 더 안전한 곳이 없는 사람을 위한 최후의 수단입니다. 물품이 준비되어 있지 않으니 비상용품을 가져가세요. 집이 1995년 이후에 지어졌고 홍수 및 폭풍해일 위험 지역 밖에 있다면 집에 머무는 것이 더 안전할 수 있습니다.",
+    "tsunamiNotRefuge": "쓰나미 때는 대피소로 가지 마세요. 내륙이나 높은 곳으로, 대피 구역 밖으로 가세요."
+  },
+  "location": {
+    "heading": "내 위치",
+    "useMine": "내 위치 사용",
+    "locating": "위치를 찾는 중…",
+    "denied": "위치 접근이 꺼져 있습니다. 대신 좌표를 입력할 수 있습니다.",
+    "unavailable": "위치를 가져올 수 없습니다. 대신 좌표를 입력할 수 있습니다.",
+    "unsupported": "이 기기는 위치를 공유할 수 없습니다. 대신 좌표를 입력할 수 있습니다.",
+    "current": "{{lat}}, {{lon}} 확인 중",
+    "manualHeading": "또는 좌표 입력",
+    "lat": "위도",
+    "lng": "경도",
+    "check": "이 좌표 확인",
+    "invalid": "위도는 -90에서 90 사이, 경도는 -180에서 180 사이로 입력하세요."
+  },
+  "data": {
+    "loading": "지도 데이터를 불러오는 중…",
+    "error": "지도 데이터를 불러올 수 없습니다. 한 번 인터넷에 연결해 다운로드하세요.",
+    "sampleHeading": "데모 데이터 전용",
+    "sampleBody": "이 목록은 시연용으로 만든 것입니다. 안전 판단에 사용하지 마세요.",
+    "sourceZones": "구역: {{source}}. {{date}}에 다운로드함.",
+    "sourcePlaces": "장소: {{source}}. {{date}}에 다운로드함."
+  },
+  "zoneKind": {
+    "tsunami": "쓰나미 대피 구역",
+    "extreme": "극한 쓰나미 대피 구역"
+  },
+  "placeKind": {
+    "hurricane-refuge": "허리케인 대피소"
+  },
+  "compass": {
+    "N": "북",
+    "NE": "북동",
+    "E": "동",
+    "SE": "남동",
+    "S": "남",
+    "SW": "남서",
+    "W": "서",
+    "NW": "북서"
+  },
+  "alerts": {
+    "updated": "{{age}} 업데이트됨",
+    "refresh": "새 경보 확인",
+    "refreshing": "확인 중…",
+    "offlineCached": "국립기상청에 연결할 수 없습니다. 마지막으로 저장된 내용을 보고 있습니다.",
+    "neverLoaded": "아직 저장된 경보가 없습니다. 한 번 인터넷에 연결해 불러오세요.",
+    "none": "{{time}} 기준 하와이에 발효 중인 경보가 없습니다.",
+    "englishOnly": "경보 내용은 국립기상청이 영어로 발표한 것입니다.",
+    "until": "{{time}}까지",
+    "issued": "{{time}}에 {{sender}} 발표",
+    "details": "전체 내용",
+    "instructions": "해야 할 일",
+    "listLabel": "발효 중인 경보",
+    "sourceLink": "미국 국립기상청 호놀룰루",
+    "severity": {
+      "Extreme": "매우 심각",
+      "Severe": "심각",
+      "Moderate": "보통",
+      "Minor": "경미",
+      "Unknown": "심각도 정보 없음"
+    }
+  },
+  "plan": {
+    "loading": "계획을 불러오는 중…",
+    "privacy": "계획은 이 기기에만 저장됩니다. 아무것도 업로드되지 않습니다.",
+    "saveFailed": "이 기기에 저장할 수 없습니다. 브라우저가 저장소를 막고 있을 수 있습니다(예: 시크릿 모드).",
+    "kitHeading": "비상용품",
+    "kitProgress": "{{total}}개 중 {{done}}개 준비됨",
+    "people": "가구 인원",
+    "kitSource": "출처: 하와이주 비상관리청",
+    "meetHeading": "만날 장소",
+    "meetBody": "흩어지고 전화가 안 될 때를 대비해 모두가 아는 장소를 정하세요.",
+    "meet": {
+      "nearHome": "집 근처",
+      "outsideNeighborhood": "동네 밖",
+      "highGround": "쓰나미 때 높은 곳"
+    },
+    "meetPlaceholder": {
+      "nearHome": "예: 모퉁이 우체통",
+      "outsideNeighborhood": "예: School Street의 도서관",
+      "highGround": "예: 언덕 위 공원"
+    },
+    "contactsHeading": "비상 연락처",
+    "contactsBody": "섬 밖에 있는 사람도 넣으세요. 지역 회선이 혼잡할 때도 장거리 전화와 문자는 되는 경우가 많습니다.",
+    "contactName": "이름",
+    "contactPhone": "전화",
+    "contactRelation": "관계",
+    "contactRelationPlaceholder": "예: 마우이에 사는 이모",
+    "addContact": "연락처 추가",
+    "remove": "삭제",
+    "removeContact": "{{name}} 삭제",
+    "notes": "메모",
+    "notesPlaceholder": "의료 필요 사항, 복용 약, 비상용품 보관 장소…",
+    "shareHeading": "인쇄 또는 공유",
+    "print": "계획 인쇄",
+    "showQr": "QR 코드 보기",
+    "hideQr": "QR 코드 숨기기",
+    "qrPrivacy": "이 QR 코드에는 위의 이름, 전화번호, 장소가 들어 있습니다. 가족과만 공유하세요.",
+    "qrAlt": "만날 장소와 비상 연락처가 담긴 QR 코드",
+    "qrTooBig": "계획이 너무 길어 QR 코드에 들어가지 않습니다. 인쇄를 이용하거나 메모를 줄이세요.",
+    "printTitle": "우리 가족 비상 계획"
+  },
+  "map": {
+    "label": "대피 구역 지도. 위치를 탭해서 확인하세요.",
+    "loading": "지도를 불러오는 중…",
+    "unavailable": "이 기기에서는 지도를 표시할 수 없습니다. 내 위치를 사용하거나 좌표를 입력할 수 있습니다.",
+    "help": "지도를 탭하면 그 위치를 확인합니다. 지도를 움직이려면 두 손가락을 사용하세요. 지도를 쓸 수 없나요? 내 위치를 사용하거나 아래에 좌표를 입력하세요. 지도는 오아후만, 구역은 모든 주요 섬을 포함합니다."
+  }
+}

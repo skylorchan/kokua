@@ -1,7 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { isReviewed, type SafetyKey } from '../i18n/translationStatus';
 
-type Props = { k: SafetyKey; as?: 'p' | 'h2' };
+type Props = {
+  k: SafetyKey;
+  as?: 'p' | 'h2';
+  /** Set false when another SafeText right below already shows the note. */
+  note?: boolean;
+};
 
 /**
  * Renders a safety-critical instruction. If the current language's translation has not
@@ -9,7 +14,7 @@ type Props = { k: SafetyKey; as?: 'p' | 'h2' };
  * screen readers switch voice) plus a note explaining why. Unreviewed machine
  * translation of safety instructions is never shown as if it were authoritative.
  */
-export function SafeText({ k, as: Tag = 'p' }: Props) {
+export function SafeText({ k, as: Tag = 'p', note = true }: Props) {
   const { t, i18n } = useTranslation();
   const lang = i18n.resolvedLanguage ?? i18n.language;
   const className = Tag === 'p' ? 'safety-text' : undefined;
@@ -21,7 +26,7 @@ export function SafeText({ k, as: Tag = 'p' }: Props) {
       <Tag className={className} lang="en">
         {t(k, { lng: 'en' })}
       </Tag>
-      <p className="safety-note">{t('i18n.unreviewed')}</p>
+      {note && <p className="safety-note">{t('i18n.unreviewed')}</p>}
     </div>
   );
 }

@@ -457,3 +457,11 @@ textarea {
   border: 2px solid #ffffff;
   box-shadow: 0 0 0 1px #0b4f6c;
 }
+
+.banner-draft {
+  background: #f3e8fd;
+  font-size: 0.9rem;
+}
+.banner-draft p + p {
+  color: var(--color-text-muted);
+}

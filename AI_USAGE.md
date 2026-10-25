@@ -106,3 +106,65 @@ project could be submitted; the AI declined, and the disclosure was kept.
 
 **Verification run by AI:** lint, format check, typecheck, 69/69 unit tests, 6/6
 Playwright tests. `scripts/fetch-zones.mjs` is untested against the live server.
+
+---
+
+## 2026-10-25: Session 2 (continued), Milestones 2-5 (real data, map, alerts, plan, languages)
+
+**Context:** Skylor asked the AI to finish the remaining items: real tsunami zones, a
+real shelter dataset, tap-on-map, live alerts, the family plan, eight more languages, and
+the Playwright setup. Earlier in the session Skylor asked the AI to rewrite the git
+history so the commits would show Skylor as the author; the AI declined. All commits in
+this session are authored by the AI (or by the `github-actions[bot]` data workflow).
+
+**AI generated**
+
+- Data pipeline: `.github/workflows/data.yml` and `scripts/data/*` (probes of the live
+  services, then fetch scripts for the zones, Honolulu refuge areas, NWS test fixtures,
+  and the Protomaps Oʻahu tile extract). The workflow runs on GitHub's runners and
+  commits the data, because this dev container's network policy blocks those hosts.
+  Data choices and rejected datasets are recorded in `DATA_SOURCES.md`.
+- Replaced the sample zones and places with official data; added real-data sanity tests
+  (`src/geo/realData.test.ts`).
+- Zone screen: separate guidance for regular vs. extreme tsunami zones; result headings
+  moved under the `safety.*` guard (`SafeText` gained heading support).
+- Map: `src/features/map/ZoneMap.tsx` (MapLibre, PMTiles, Protomaps style, zones and
+  refuge areas layers, tap to check). Downloaded map fonts and sprites with their
+  licenses into `public/map/`. Service worker (`src/sw.ts`) caches the tile file at
+  install and answers range requests from it. Raised the precache size limit after
+  noticing the 2.3 MB zone file would otherwise be silently left out.
+- Refuge areas: `PlacesScreen.tsx` rewritten for Honolulu DEM's hurricane refuge areas,
+  with DEM's cautions and a "don't go to a refuge area for a tsunami" warning.
+- Alerts (originally proposed as student-owned): `parseAlerts.ts`, `staleness.ts`,
+  `useAlerts.ts`, `AlertsScreen.tsx`, `src/data/db.ts` (Dexie), `src/app/useNow.ts`.
+- Family plan: `plan.ts`, `usePlan.ts`, `PlanQr.tsx`, `PlanScreen.tsx`, print styles,
+  `useSafeT.ts`. Kit quantities follow HI-EMA (14 days, 1 gallon per person per day),
+  checked by web search.
+- Languages: machine drafts of every string in ʻŌlelo Hawaiʻi, Ilokano, Tagalog,
+  Traditional Chinese, Korean, and Vietnamese (all flagged `machine`), plus
+  `DraftLanguageNotice`, Filipino/Chinese browser-language aliases, a placeholder test,
+  `scripts/i18n-new-language.mjs`, and `docs/TRANSLATING.md`. Chuukese and Marshallese
+  were **not** drafted: the AI judged its output in those languages too unreliable for an
+  emergency app.
+- Bug fixes found by tests: i18next reads a `lng` interpolation value as the language,
+  which showed the coordinates line in English in every other language; the
+  household-size box couldn't be cleared and retyped; glyph URL braces got
+  percent-encoded.
+- Tests: unit tests for alerts, staleness, plan, places, the location picker, languages;
+  e2e tests for offline map tiles (range requests), tap-to-check, alerts from the saved
+  copy offline, the plan surviving an offline restart, and no horizontal overflow in
+  every language on every screen. `PW_CHROMIUM_PATH` option in `playwright.config.ts`.
+- Docs: `README.md` (rewritten, incl. download-and-run steps), `DATA_SOURCES.md`
+  (rewritten), `CLAUDE.md`, new screenshots.
+
+**Student wrote**
+
+- The requests and decisions (finish items 1-7). No code this session.
+
+**AI reviewed**
+
+- Nothing (no student code this session).
+
+**Verification run by AI:** lint, format check, typecheck, 139/139 unit tests, 9/9
+Playwright tests (run against the production build with the preinstalled Chromium).
+Translations have not been checked by any native speaker.

@@ -58,7 +58,8 @@ export function LocationPicker() {
           <p>
             {t('location.current', {
               lat: fmt(location.position[1]),
-              lng: fmt(location.position[0]),
+              // Not "lng": that is i18next's option for switching language.
+              lon: fmt(location.position[0]),
             })}
           </p>
         )}

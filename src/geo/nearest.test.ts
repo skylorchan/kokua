@@ -3,7 +3,7 @@ import { nearestPlaces, type PlaceFeature } from './nearest';
 
 const place = (id: string, lng: number, lat: number): PlaceFeature => ({
   type: 'Feature',
-  properties: { id, name: id, kind: 'refuge' },
+  properties: { id, name: id, kind: 'hurricane-refuge' },
   geometry: { type: 'Point', coordinates: [lng, lat] },
 });
 

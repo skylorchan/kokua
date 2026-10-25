@@ -22,15 +22,27 @@ disclosure must stay accurate: do not remove or soften `AI_USAGE.md`.
 
 ## [STUDENT-OWNED] files
 
-None currently. `src/geo/*` was planned as student-owned but was written by AI on
-2026-10-25 at the owner's request (see `AI_USAGE.md`). Still reserved for the student if
-they want them: `src/sync/checkinQueue.ts` (stretch), `src/features/alerts/parseAlerts.ts`,
-`src/features/alerts/staleness.ts`. Any file the student writes gets a `[STUDENT-OWNED]`
-header comment and is added here.
+None currently. `src/geo/*` and `src/features/alerts/{parseAlerts,staleness}.ts` were
+planned as student-owned but were written by AI on 2026-10-25 at the owner's request
+(see `AI_USAGE.md`). Still reserved for the student if they want it:
+`src/sync/checkinQueue.ts` (stretch). Any file the student writes gets a
+`[STUDENT-OWNED]` header comment and is added here.
+
+## Data and translations
+
+- Real data is downloaded by `.github/workflows/data.yml` (scripts in `scripts/data/`)
+  and committed by the workflow. Don't hand-edit `public/data`, `public/tiles`, or the
+  NWS fixtures, and don't run Prettier on them (they're in `.prettierignore`).
+- Don't add machine drafts for languages you can't write reliably (Chuukese and
+  Marshallese were left for a human translator). See `docs/TRANSLATING.md`.
+- Never pass `lng` as an interpolation value to `t()`; i18next treats it as the language.
 
 ## Commands
 
 - `npm run dev` / `npm run build` / `npm run preview`
 - `npm run lint`, `npm run typecheck`, `npm test`, `npm run e2e`
-- `npm run data:fetch` downloads the official tsunami zones (needs access to geodata.hawaii.gov)
+- `npm run data:fetch` downloads the official zones and refuge areas (needs network
+  access to geodata.hawaii.gov and services.arcgis.com; otherwise run the Data workflow)
+- `npm run i18n:sync` flags new strings; `npm run i18n:new -- <code>` starts a language
+- `PW_CHROMIUM_PATH=/opt/pw-browsers/chromium npm run e2e` in cloud dev containers
 - Deployed base path is `/2425/` (GitHub Pages). Routing uses hash URLs.

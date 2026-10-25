@@ -14,3 +14,10 @@ export function isReviewed(lang: string, key: string): boolean {
   if (lang === 'en') return true;
   return table[lang]?.[key]?.status === 'reviewed';
 }
+
+/** True if any string in this language is still an unreviewed machine draft. */
+export function isDraftLanguage(lang: string): boolean {
+  if (lang === 'en') return false;
+  const entries = Object.values(table[lang] ?? {});
+  return entries.length === 0 || entries.some((e) => e?.status !== 'reviewed');
+}

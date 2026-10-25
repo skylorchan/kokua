@@ -1,0 +1,188 @@
+{
+  "app": {
+    "name": "Kōkua",
+    "tagline": "Ka hoʻomākaukau no ka pōpilikia ma Hawaiʻi"
+  },
+  "a11y": {
+    "skipToContent": "E lele i ka ʻike nui"
+  },
+  "nav": {
+    "label": "Papa kuhikuhi nui",
+    "zone": "ʻĀpana",
+    "places": "Puʻuhonua",
+    "alerts": "Nā ʻōlelo aʻo",
+    "plan": "Kaʻu papa hana"
+  },
+  "language": {
+    "label": "ʻŌlelo"
+  },
+  "status": {
+    "offline": "ʻAʻole ʻoe i pili i ka pūnaewele. Hana nō ka ʻike i mālama ʻia.",
+    "offlineReady": "Mākaukau ʻo Kōkua e hana me ka ʻole o ka pūnaewele.",
+    "updateAvailable": "Aia kekahi mana hou o Kōkua.",
+    "reload": "Hoʻouka hou",
+    "dismiss": "Pani"
+  },
+  "i18n": {
+    "unreviewed": "Hōʻike ʻia kēia kuhikuhi palekana ma ka ʻōlelo Pelekānia no ka mea ʻaʻole i nānā ʻia kona unuhi.",
+    "unreviewedList": "Hōʻike ʻia kēia mau mea palekana ma ka ʻōlelo Pelekānia no ka mea ʻaʻole i nānā ʻia ko lākou unuhi.",
+    "draftLanguage": "He kāmua mīkini kēia unuhi, ʻaʻole i nānā ʻia e ka mānaleo. Kuhihewa paha kekahi mau huaʻōlelo."
+  },
+  "screens": {
+    "zone": {
+      "title": "Aia anei au i loko o ka ʻāpana haʻalele?",
+      "body": "E nānā inā aia kekahi wahi i loko o ka ʻāpana haʻalele kai eʻe. Hana kēia me ka ʻole o ka pūnaewele.",
+      "naturalWarningHeading": "Nā hōʻailona kūlohelohe o ke kai eʻe",
+      "naturalWarningSource": "Kumu: Ke alakaʻi palekana kai eʻe o ka National Weather Service"
+    },
+    "places": {
+      "title": "Nā puʻuhonua makani pāhili",
+      "body": "Nā puʻuhonua makani pāhili kūhelu kokoke loa ma Oʻahu, ma ka mamao pololei. Hana kēia me ka ʻole o ka pūnaewele.",
+      "listLabel": "Nā wahi kokoke loa",
+      "distance": "{{km}} km ({{mi}} mi) ma ka ʻaoʻao {{dir}}",
+      "outsideCoverage": "No Oʻahu wale nō kā mākou ʻikepili puʻuhonua."
+    },
+    "alerts": {
+      "title": "Nā ʻōlelo aʻo o ke ea",
+      "body": "Nā ʻōlelo aʻo no Hawaiʻi mai ka National Weather Service. Mālama ʻia ke kope hope loa ma kāu kelepona, no laila hiki ke heluhelu ʻia me ka ʻole o ka hōʻailona."
+    },
+    "plan": {
+      "title": "Ka papa hana pōpilikia o ka ʻohana",
+      "body": "E kākau i kahi e hui ai ka ʻohana a me ka mea e kelepona ai. Mālama ʻia nā mea a pau ma kēia kelepona wale nō."
+    }
+  },
+  "safety": {
+    "naturalWarning": "Inā ʻike ʻoe i kekahi ōlaʻi ikaika a i ʻole ʻike ʻoe i ka mimiki ʻana o ke kai, e neʻe koke i uka a i kahi kiʻekiʻe. Mai kali i ka ʻōlelo aʻo kūhelu.",
+    "inZone": "Inā puka kekahi ʻōlelo aʻo kai eʻe, e haʻalele koke i kēia ʻāpana. E hele i uka a i kahi kiʻekiʻe, ma ka wāwae inā hiki.",
+    "notInZone": "ʻAʻole maopopo ka palekana ma waho o ka ʻāpana ma ka palapala ʻāina. E hahai mau i nā kuhikuhi a nā luna pōpilikia.",
+    "placesDisclaimer": "He mamao pololei nā mamao, ʻaʻole he ala kaʻa a hele wāwae paha. ʻAʻole wehe ʻia nā puʻuhonua a pau i kēlā me kēia pōpilikia, no laila e nānā i nā hoʻolaha kūhelu ma mua o ka hele ʻana.",
+    "inZoneHeading": "Aia ʻoe i loko o ka ʻāpana haʻalele kai eʻe",
+    "inExtremeHeading": "Aia ʻoe i loko o ka ʻāpana haʻalele kai eʻe nui loa",
+    "inExtremeZone": "E haʻalele koke i kēia ʻāpana inā puka ka Extreme Tsunami Warning, a i ʻole inā kauoha nā luna. E hele i uka a i kahi kiʻekiʻe, ma ka wāwae inā hiki.",
+    "notInZoneHeading": "Aia ʻoe ma waho o nā ʻāpana haʻalele kai eʻe ma ka palapala ʻāina",
+    "outsideCoverageHeading": "Aia kēia wahi ma waho o ka ʻāpana i uhi ʻia e kā mākou ʻikepili, no laila ʻaʻole hiki iā mākou ke haʻi aku.",
+    "alertsStale": "He kahiko paha kēia mau ʻōlelo aʻo. No ka mea hou loa, e hoʻolohe i ka lekiō a kīwī kūloko, a i ʻole ka NOAA Weather Radio.",
+    "kitWater": "Wai: {{gallons}} kālani (1 kālani no ke kanaka i kēlā me kēia lā no {{days}} lā)",
+    "kitFood": "Meaʻai e mau ana me ka ʻole o ka pahu hau, lawa no {{days}} lā",
+    "kitMeds": "Nā lāʻau lapaʻau a me nā kope o nā palapala kauoha no {{days}} lā",
+    "kitFirstAid": "Pahu kōkua mua",
+    "kitRadio": "Lekiō pākaukau a i ʻole wili lima",
+    "kitLight": "Nā kukui uila a me nā pākaukau ʻē aʻe",
+    "kitPower": "Nā mea hoʻouka kelepona a me ka pākaukau kākoʻo i hoʻouka piha ʻia",
+    "kitDocs": "Nā kope o nā palapala ʻike, ʻinikua, a me nā palapala koʻikoʻi i loko o ka ʻeke pale wai",
+    "kitCash": "Kekahi kālā kuʻuna liʻiliʻi",
+    "kitPets": "Meaʻai, wai, a me nā lako no nā holoholona hānai",
+    "kitKnowZone": "E nānā inā aia kou hale, kula, a me kahi hana i loko o ka ʻāpana haʻalele kai eʻe",
+    "kitOutOfArea": "E koho i kekahi kanaka ma waho o ka mokupuni e hiki i ka ʻohana a pau ke kelepona aku",
+    "printPlan": "E paʻi i kekahi kope a mālama pū me kāu pahu lako. Pau paha ka ikehu o ke kelepona.",
+    "refugeInfo": "He koho hope loa nā puʻuhonua makani pāhili no ka poʻe ʻaʻohe wahi palekana aʻe. ʻAʻohe lako ma laila, no laila e lawe pū i kāu pahu lako. Inā kūkulu ʻia kou hale i ka makahiki 1995 a ma hope mai, a aia ma waho o nā wahi wai hālana a me ke kai piʻi o ka ʻino, ʻoi aku paha ka palekana o ka noho ʻana ma ka hale.",
+    "tsunamiNotRefuge": "No ke kai eʻe, mai hele i ka puʻuhonua. E hele i uka a i kahi kiʻekiʻe, ma waho o ka ʻāpana haʻalele."
+  },
+  "location": {
+    "heading": "Kou wahi",
+    "useMine": "E hoʻohana i koʻu wahi",
+    "locating": "Ke ʻimi nei i kou wahi…",
+    "denied": "Ua hoʻopio ʻia ke komo ʻana i ka wahi. Hiki iā ʻoe ke hoʻokomo i nā kuhikuhina.",
+    "unavailable": "ʻAʻole i loaʻa kou wahi. Hiki iā ʻoe ke hoʻokomo i nā kuhikuhina.",
+    "unsupported": "ʻAʻole hiki i kēia hāmeʻa ke kaʻana like i kona wahi. Hiki iā ʻoe ke hoʻokomo i nā kuhikuhina.",
+    "current": "Ke nānā nei iā {{lat}}, {{lon}}",
+    "manualHeading": "A i ʻole e hoʻokomo i nā kuhikuhina",
+    "lat": "Latitū",
+    "lng": "Lonitū",
+    "check": "E nānā i kēia mau kuhikuhina",
+    "invalid": "E hoʻokomo i ka latitū ma waena o -90 a me 90 a me ka lonitū ma waena o -180 a me 180."
+  },
+  "data": {
+    "loading": "Ke hoʻouka nei i ka ʻikepili palapala ʻāina…",
+    "error": "ʻAʻole hiki ke hoʻouka i ka ʻikepili palapala ʻāina. E pili i ka pūnaewele hoʻokahi manawa e hoʻoiho ai.",
+    "sampleHeading": "ʻIkepili hōʻike wale nō",
+    "sampleBody": "Ua hana ʻia kēia papa inoa no ka hōʻike wale nō. Mai hoʻohana no nā hoʻoholo palekana.",
+    "sourceZones": "Nā ʻāpana: {{source}}. Hoʻoiho ʻia ma {{date}}.",
+    "sourcePlaces": "Nā wahi: {{source}}. Hoʻoiho ʻia ma {{date}}."
+  },
+  "zoneKind": {
+    "tsunami": "ʻĀpana haʻalele kai eʻe",
+    "extreme": "ʻĀpana haʻalele kai eʻe nui loa"
+  },
+  "placeKind": {
+    "hurricane-refuge": "Puʻuhonua makani pāhili"
+  },
+  "compass": {
+    "N": "ʻākau",
+    "NE": "hikina ʻākau",
+    "E": "hikina",
+    "SE": "hikina hema",
+    "S": "hema",
+    "SW": "komohana hema",
+    "W": "komohana",
+    "NW": "komohana ʻākau"
+  },
+  "alerts": {
+    "updated": "Hoʻohou ʻia {{age}}",
+    "refresh": "E nānā i nā ʻōlelo aʻo hou",
+    "refreshing": "Ke nānā nei…",
+    "offlineCached": "ʻAʻole hiki ke pili i ka National Weather Service. ʻO ke kope hope loa i mālama ʻia kāu e nānā nei.",
+    "neverLoaded": "ʻAʻohe ʻōlelo aʻo i mālama ʻia. E pili i ka pūnaewele hoʻokahi manawa e hoʻouka ai.",
+    "none": "ʻAʻohe ʻōlelo aʻo e hana ana no Hawaiʻi i ka {{time}}.",
+    "englishOnly": "No ka National Weather Service mai ka ʻōlelo o ka ʻōlelo aʻo, ma ka ʻōlelo Pelekānia.",
+    "until": "A hiki i ka {{time}}",
+    "issued": "Hoʻopuka ʻia i ka {{time}} e {{sender}}",
+    "details": "Nā kikoʻī piha",
+    "instructions": "Ka mea e hana ai",
+    "listLabel": "Nā ʻōlelo aʻo e hana ana",
+    "sourceLink": "National Weather Service Honolulu",
+    "severity": {
+      "Extreme": "Koʻikoʻi loa",
+      "Severe": "Koʻikoʻi",
+      "Moderate": "Waena",
+      "Minor": "Liʻiliʻi",
+      "Unknown": "ʻAʻole i haʻi ʻia ke koʻikoʻi"
+    }
+  },
+  "plan": {
+    "loading": "Ke hoʻouka nei i kāu papa hana…",
+    "privacy": "Mālama ʻia kāu papa hana ma kēia hāmeʻa wale nō. ʻAʻohe mea i hoʻouka ʻia aku.",
+    "saveFailed": "ʻAʻole hiki ke mālama ma kēia hāmeʻa. Ke ālai nei paha kāu polokalamu kele pūnaewele i ka waihona (e laʻa, ma ka kele pilikino).",
+    "kitHeading": "Pahu lako",
+    "kitProgress": "Mākaukau {{done}} o {{total}}",
+    "people": "Ka nui o ka poʻe i loko o ka hale",
+    "kitSource": "Kumu: Hawaiʻi Emergency Management Agency",
+    "meetHeading": "Nā wahi hui",
+    "meetBody": "E koho i nā wahi i ʻike ʻia e nā mea a pau, inā kaʻawale ʻoukou a pio nā kelepona.",
+    "meet": {
+      "nearHome": "Kokoke i ka hale",
+      "outsideNeighborhood": "Ma waho o ke kaiāulu",
+      "highGround": "Kahi kiʻekiʻe no ke kai eʻe"
+    },
+    "meetPlaceholder": {
+      "nearHome": "e laʻa, ka pahu leka ma ke kihi",
+      "outsideNeighborhood": "e laʻa, ka hale waihona puke ma School Street",
+      "highGround": "e laʻa, ka pāka ma luna o ka puʻu"
+    },
+    "contactsHeading": "Nā kelepona pōpilikia",
+    "contactsBody": "E hoʻokomo i kekahi kanaka ma waho o ka mokupuni. Hana pinepine nā kelepona mamao a me nā leka uila ke paʻa nā laina kūloko.",
+    "contactName": "Inoa",
+    "contactPhone": "Kelepona",
+    "contactRelation": "Pilina",
+    "contactRelationPlaceholder": "e laʻa, ʻAnakē ma Maui",
+    "addContact": "Hoʻohui i ka mea kelepona",
+    "remove": "Wehe",
+    "removeContact": "Wehe iā {{name}}",
+    "notes": "Nā memo",
+    "notesPlaceholder": "Nā pono olakino, nā lāʻau lapaʻau, kahi i mālama ʻia ai ka pahu lako…",
+    "shareHeading": "Paʻi a kaʻana like paha",
+    "print": "Paʻi i ka papa hana",
+    "showQr": "Hōʻike i ke code QR",
+    "hideQr": "Hūnā i ke code QR",
+    "qrPrivacy": "Aia i loko o kēia code QR nā inoa, nā helu kelepona, a me nā wahi ma luna. E kaʻana like me kou ʻohana wale nō.",
+    "qrAlt": "Code QR me kou mau wahi hui a me nā kelepona pōpilikia",
+    "qrTooBig": "Lōʻihi loa kāu papa hana no ke code QR. E paʻi ma kahi o ia, a i ʻole e hoʻopōkole i nā memo.",
+    "printTitle": "Ka papa hana pōpilikia o ko mākou ʻohana"
+  },
+  "map": {
+    "label": "Palapala ʻāina o nā ʻāpana haʻalele. E kaomi i kekahi wahi e nānā ai.",
+    "loading": "Ke hoʻouka nei i ka palapala ʻāina…",
+    "unavailable": "ʻAʻole hiki ke hōʻike i ka palapala ʻāina ma kēia hāmeʻa. Hiki nō ke hoʻohana i kou wahi a i ʻole e hoʻokomo i nā kuhikuhina.",
+    "help": "E kaomi i ka palapala ʻāina e nānā i kekahi wahi. E hoʻohana i ʻelua manamana lima e hoʻoneʻe i ka palapala ʻāina. ʻAʻole hiki ke hoʻohana i ka palapala ʻāina? E hoʻohana i kou wahi a i ʻole e hoʻokomo i nā kuhikuhina ma lalo. ʻO Oʻahu wale nō ma ka palapala ʻāina; ʻo nā mokupuni nui a pau ma nā ʻāpana."
+  }
+}

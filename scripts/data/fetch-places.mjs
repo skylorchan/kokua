@@ -14,7 +14,10 @@ const titleCase = (s) =>
     .toLowerCase()
     .replace(/\b\w/g, (c) => c.toUpperCase());
 
-const raw = await arcgisGeoJson(LAYER, { outFields: 'OBJECTID,Name,Address,Place', orderByFields: 'OBJECTID' });
+const raw = await arcgisGeoJson(LAYER, {
+  outFields: 'OBJECTID,Name,Address,Place',
+  orderByFields: 'OBJECTID',
+});
 const features = raw
   .filter((f) => f.geometry?.type === 'Point' && String(f.properties?.Name ?? '').trim())
   .map((f) => {
@@ -42,7 +45,8 @@ writeCollection(
   'public/data/places.geojson',
   {
     sample: false,
-    source: 'City and County of Honolulu Department of Emergency Management, Potential Hurricane Refuge Areas (updated August 2026)',
+    source:
+      'City and County of Honolulu Department of Emergency Management, Potential Hurricane Refuge Areas (updated August 2026)',
     retrieved: today(),
     // Oʻahu only; the layer covers no other island.
     coverage: [-158.3, 21.24, -157.63, 21.72],
@@ -51,4 +55,5 @@ writeCollection(
 );
 // Sanity check that every point is on Oʻahu.
 const [w, s, e, n] = bbox(features);
-if (w < -158.3 || e > -157.63 || s < 21.24 || n > 21.72) throw new Error(`Points outside Oʻahu: ${[w, s, e, n]}`);
+if (w < -158.3 || e > -157.63 || s < 21.24 || n > 21.72)
+  throw new Error(`Points outside Oʻahu: ${[w, s, e, n]}`);

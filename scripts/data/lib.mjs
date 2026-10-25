@@ -14,7 +14,7 @@ export async function getJson(url, accept = 'application/json') {
 /** All features of an ArcGIS layer as GeoJSON, following pagination. */
 export async function arcgisGeoJson(layerUrl, params) {
   const features = [];
-  for (let offset = 0; ; ) {
+  for (let offset = 0; ;) {
     const url = new URL(`${layerUrl}/query`);
     url.search = new URLSearchParams({
       where: '1=1',
@@ -80,4 +80,9 @@ const ISLANDS = {
   KAHOOLAWE: 'Kahoʻolawe',
   HAWAII: 'Hawaiʻi Island',
 };
-export const islandName = (raw) => ISLANDS[String(raw ?? '').trim().toUpperCase()] ?? String(raw ?? '').trim();
+export const islandName = (raw) =>
+  ISLANDS[
+    String(raw ?? '')
+      .trim()
+      .toUpperCase()
+  ] ?? String(raw ?? '').trim();

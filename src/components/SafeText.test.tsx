@@ -47,3 +47,14 @@ describe('isReviewed', () => {
     expect(translationStatus.isReviewed('ja', 'safety.doesNotExist')).toBe(false);
   });
 });
+
+describe('SafeText as a heading', () => {
+  it('renders the fallback as a heading so the page outline stays intact', async () => {
+    await setupTestI18n('ja');
+    vi.spyOn(translationStatus, 'isReviewed').mockReturnValue(false);
+    render(<SafeText k="safety.inZoneHeading" as="h2" />);
+    const heading = screen.getByRole('heading', { level: 2 });
+    expect(heading).toHaveTextContent(en.safety.inZoneHeading);
+    expect(heading).toHaveAttribute('lang', 'en');
+  });
+});

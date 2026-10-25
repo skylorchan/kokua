@@ -22,7 +22,12 @@ export default defineConfig({
       registerType: 'prompt',
       injectRegister: false,
       injectManifest: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest,geojson}'],
+        // Everything the app needs offline, including map fonts (.pbf) and the zone data.
+        // The map tiles (.pmtiles) are cached separately by src/sw.ts because they are
+        // read with range requests.
+        globPatterns: ['**/*.{js,mjs,css,html,svg,png,ico,webmanifest,geojson,json,pbf}'],
+        // The official zone file is ~2.3 MB; the 2 MB default would silently skip it.
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
       },
       includeAssets: ['icons/favicon.svg'],
       manifest: {

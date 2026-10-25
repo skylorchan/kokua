@@ -9,7 +9,7 @@
   "nav": {
     "label": "Main",
     "zone": "Zone",
-    "places": "Safe places",
+    "places": "Refuge areas",
     "alerts": "Alerts",
     "plan": "My plan"
   },
@@ -24,38 +24,58 @@
     "dismiss": "Dismiss"
   },
   "i18n": {
-    "unreviewed": "This safety instruction is shown in English because its translation has not been reviewed yet."
+    "unreviewed": "This safety instruction is shown in English because its translation has not been reviewed yet.",
+    "unreviewedList": "These safety items are shown in English because their translations have not been reviewed yet."
   },
   "screens": {
     "zone": {
       "title": "Am I in an evacuation zone?",
       "body": "Check a location against tsunami evacuation zones. This works offline.",
       "naturalWarningHeading": "Natural tsunami warning signs",
-      "naturalWarningSource": "Source: National Weather Service tsunami safety guidance",
-      "inZone": "You are in a tsunami evacuation zone",
-      "notInZone": "You are outside the mapped tsunami evacuation zones",
-      "outsideCoverage": "This location is outside the area our zone data covers, so we can't tell you."
+      "naturalWarningSource": "Source: National Weather Service tsunami safety guidance"
     },
     "places": {
-      "title": "Nearest safe places",
-      "body": "The closest places from your location, by straight-line distance. This works offline.",
+      "title": "Hurricane refuge areas",
+      "body": "The closest official hurricane refuge areas on Oʻahu, by straight-line distance. This works offline.",
       "listLabel": "Nearest places",
-      "distance": "{{km}} km ({{mi}} mi) to the {{dir}}"
+      "distance": "{{km}} km ({{mi}} mi) to the {{dir}}",
+      "outsideCoverage": "We only have refuge area data for Oʻahu."
     },
     "alerts": {
       "title": "Weather alerts",
-      "body": "Live alerts from the National Weather Service are coming soon."
+      "body": "Alerts for Hawaiʻi from the National Weather Service. The last copy stays on your phone, so you can still read it with no signal."
     },
     "plan": {
       "title": "Family emergency plan",
-      "body": "Your household checklist, meeting points, and emergency contacts are coming soon."
+      "body": "Write down where your household will meet and who to call. Everything stays on this phone."
     }
   },
   "safety": {
     "naturalWarning": "If you feel a strong earthquake or see the ocean suddenly pull back, move inland or to high ground right away. Do not wait for an official warning.",
-    "inZone": "If a tsunami warning is issued, leave this zone right away. Go inland or to high ground, on foot if you can.",
+    "inZone": "If any tsunami warning is issued, leave this zone right away. Go inland or to high ground, on foot if you can.",
     "notInZone": "Being outside a mapped zone does not guarantee you are safe. Always follow instructions from emergency officials.",
-    "placesDisclaimer": "Distances are straight-line, not driving or walking routes. Shelters open only for specific emergencies, so check official announcements before you go."
+    "placesDisclaimer": "Distances are straight-line, not driving or walking routes. Not every refuge area opens in an emergency, so check official announcements before you go.",
+    "inZoneHeading": "You are in a tsunami evacuation zone",
+    "inExtremeHeading": "You are in an extreme tsunami evacuation zone",
+    "inExtremeZone": "Leave this zone right away if an Extreme Tsunami Warning is issued, or if officials tell you to. Go inland or to high ground, on foot if you can.",
+    "notInZoneHeading": "You are outside the mapped tsunami evacuation zones",
+    "outsideCoverageHeading": "This location is outside the area our zone data covers, so we can't tell you.",
+    "alertsStale": "These alerts may be out of date. For the latest, listen to local radio or TV, or NOAA Weather Radio.",
+    "kitWater": "Water: {{gallons}} gallons (1 gallon per person per day for {{days}} days)",
+    "kitFood": "Food that keeps without a fridge, enough for {{days}} days",
+    "kitMeds": "Medicines and copies of prescriptions for {{days}} days",
+    "kitFirstAid": "First aid kit",
+    "kitRadio": "Battery-powered or hand-crank radio",
+    "kitLight": "Flashlights and extra batteries",
+    "kitPower": "Phone chargers and a charged backup battery",
+    "kitDocs": "Copies of IDs, insurance, and important papers in a waterproof bag",
+    "kitCash": "Some cash in small bills",
+    "kitPets": "Food, water, and supplies for pets",
+    "kitKnowZone": "Check whether your home, school, and work are in a tsunami evacuation zone",
+    "kitOutOfArea": "Pick an off-island contact everyone in the household can call",
+    "printPlan": "Print a copy and keep it with your kit. Phones can run out of battery.",
+    "refugeInfo": "Hurricane refuge areas are a last resort for people without a safer place. They have no supplies, so bring your kit. If your home was built in 1995 or later and is outside flood and storm surge areas, staying home may be safer.",
+    "tsunamiNotRefuge": "For a tsunami, don't head to a refuge area. Go inland or to high ground, out of the evacuation zone."
   },
   "location": {
     "heading": "Your location",
@@ -64,7 +84,7 @@
     "denied": "Location access is turned off. You can enter coordinates instead.",
     "unavailable": "Couldn't get your location. You can enter coordinates instead.",
     "unsupported": "This device can't share its location. You can enter coordinates instead.",
-    "current": "Using location {{lat}}, {{lng}}",
+    "current": "Checking {{lat}}, {{lng}}",
     "manualHeading": "Or enter coordinates",
     "lat": "Latitude",
     "lng": "Longitude",
@@ -75,17 +95,19 @@
     "loading": "Loading map data…",
     "error": "Couldn't load map data. Connect once to download it.",
     "sampleHeading": "Demo data only",
-    "sampleBody": "The zones and places in this version are made up for demonstration. Do not use them to make safety decisions.",
-    "source": "Source: {{source}}, retrieved {{date}}"
+    "sampleBody": "This list is made up for demonstration. Do not use it to make safety decisions.",
+    "sourceZones": "Zones: {{source}}. Downloaded {{date}}.",
+    "sourcePlaces": "Places: {{source}}. Downloaded {{date}}."
   },
   "zoneKind": {
-    "tsunami": "tsunami evacuation zone",
-    "extreme": "extreme tsunami evacuation zone"
+    "tsunami": "Tsunami evacuation zone",
+    "extreme": "Extreme tsunami evacuation zone"
   },
   "placeKind": {
     "shelter": "Emergency shelter",
     "refuge": "Refuge area",
-    "assembly": "Assembly point"
+    "assembly": "Assembly point",
+    "hurricane-refuge": "Hurricane refuge area"
   },
   "compass": {
     "N": "north",
@@ -96,5 +118,73 @@
     "SW": "southwest",
     "W": "west",
     "NW": "northwest"
+  },
+  "alerts": {
+    "updated": "Updated {{age}}",
+    "refresh": "Check for new alerts",
+    "refreshing": "Checking…",
+    "offlineCached": "Couldn't reach the National Weather Service. You're seeing the last saved copy.",
+    "neverLoaded": "No alerts saved yet. Connect to the internet once to load them.",
+    "none": "No active alerts for Hawaiʻi as of {{time}}.",
+    "englishOnly": "Alert text comes from the National Weather Service in English.",
+    "until": "Until {{time}}",
+    "issued": "Issued {{time}} by {{sender}}",
+    "details": "Full details",
+    "instructions": "What to do",
+    "listLabel": "Active alerts",
+    "sourceLink": "National Weather Service Honolulu",
+    "severity": {
+      "Extreme": "Extreme",
+      "Severe": "Severe",
+      "Moderate": "Moderate",
+      "Minor": "Minor",
+      "Unknown": "Severity not given"
+    }
+  },
+  "plan": {
+    "loading": "Loading your plan…",
+    "privacy": "Your plan is saved only on this device. Nothing is uploaded.",
+    "saveFailed": "Couldn't save on this device. Your browser may be blocking storage (for example, in private browsing).",
+    "kitHeading": "Supply kit",
+    "kitProgress": "{{done}} of {{total}} ready",
+    "people": "People in your household",
+    "kitSource": "Source: Hawaiʻi Emergency Management Agency",
+    "meetHeading": "Meeting places",
+    "meetBody": "Pick places everyone knows, in case you get separated and phones are down.",
+    "meet": {
+      "nearHome": "Near home",
+      "outsideNeighborhood": "Outside the neighborhood",
+      "highGround": "High ground for a tsunami"
+    },
+    "meetPlaceholder": {
+      "nearHome": "e.g. the mailbox by the corner",
+      "outsideNeighborhood": "e.g. the library on School Street",
+      "highGround": "e.g. the park up the hill"
+    },
+    "contactsHeading": "Emergency contacts",
+    "contactsBody": "Include someone off-island. Long-distance calls and texts often work when local lines are busy.",
+    "contactName": "Name",
+    "contactPhone": "Phone",
+    "contactRelation": "Relationship",
+    "contactRelationPlaceholder": "e.g. Auntie on Maui",
+    "addContact": "Add contact",
+    "remove": "Remove",
+    "removeContact": "Remove {{name}}",
+    "notes": "Notes",
+    "notesPlaceholder": "Medical needs, medications, where the kit is kept…",
+    "shareHeading": "Print or share",
+    "print": "Print plan",
+    "showQr": "Show QR code",
+    "hideQr": "Hide QR code",
+    "qrPrivacy": "This QR code contains the names, phone numbers, and places above. Only share it with your household.",
+    "qrAlt": "QR code with your meeting places and emergency contacts",
+    "qrTooBig": "Your plan is too long to fit in a QR code. Use Print instead, or shorten the notes.",
+    "printTitle": "Our household emergency plan"
+  },
+  "map": {
+    "label": "Map of evacuation zones. Tap a spot to check it.",
+    "loading": "Loading map…",
+    "unavailable": "The map can't be shown on this device. You can still use your location or enter coordinates.",
+    "help": "Tap the map to check a spot. Use two fingers to move the map. Can't use the map? Use your location or enter coordinates below. The map covers Oʻahu; zones cover all main islands."
   }
 }

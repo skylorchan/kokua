@@ -4,3 +4,9 @@ coverage
 playwright-report
 test-results
 package-lock.json
+
+# Downloaded data: keep exactly as fetched (and minified).
+public/data
+public/tiles
+public/map
+src/features/alerts/fixtures

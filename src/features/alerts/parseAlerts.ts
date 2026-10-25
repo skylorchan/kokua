@@ -45,7 +45,7 @@ function severity(v: unknown): Severity {
   return typeof v === 'string' && v in SEVERITY_RANK ? (v as Severity) : 'Unknown';
 }
 
-function parseOne(feature: unknown): (Alert & { references: string[] }) | null {
+function parseOne(feature: unknown): { alert: Alert; references: string[] } | null {
   if (!isObject(feature) || !isObject(feature.properties)) return null;
   const p = feature.properties;
   // Test and exercise messages must never look like real alerts.
@@ -56,9 +56,11 @@ function parseOne(feature: unknown): (Alert & { references: string[] }) | null {
   const sent = date(p.sent);
   if (!id || !event || !sent) return null;
   const references = Array.isArray(p.references)
-    ? p.references.flatMap((r) => (isObject(r) && str(r.identifier) ? [r.identifier as string] : []))
+    ? p.references.flatMap((r) =>
+        isObject(r) && str(r.identifier) ? [r.identifier as string] : [],
+      )
     : [];
-  return {
+  const alert: Alert = {
     id,
     event,
     headline: str(p.headline),
@@ -73,8 +75,8 @@ function parseOne(feature: unknown): (Alert & { references: string[] }) | null {
     expires: date(p.expires),
     ends: date(p.ends),
     senderName: str(p.senderName) ?? 'National Weather Service',
-    references,
   };
+  return { alert, references };
 }
 
 /**
@@ -83,16 +85,15 @@ function parseOne(feature: unknown): (Alert & { references: string[] }) | null {
  */
 export function parseAlerts(json: unknown): Alert[] {
   if (!isObject(json) || !Array.isArray(json.features)) return [];
-  const parsed = json.features.map(parseOne).filter((a) => a !== null);
+  const parsed = json.features.map(parseOne).filter((p) => p !== null);
 
-  const byId = new Map(parsed.map((a) => [a.id, a]));
-  const replaced = new Set(parsed.flatMap((a) => a.references));
+  const byId = new Map(parsed.map((p) => [p.alert.id, p.alert]));
+  const replaced = new Set(parsed.flatMap((p) => p.references));
   return [...byId.values()]
     .filter((a) => !replaced.has(a.id))
     .sort(
       (a, b) =>
         SEVERITY_RANK[a.severity] - SEVERITY_RANK[b.severity] ||
         b.sent.getTime() - a.sent.getTime(),
-    )
-    .map(({ references: _references, ...alert }) => alert);
+    );
 }

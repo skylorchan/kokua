@@ -15,7 +15,11 @@ export default defineConfig({
   use: {
     baseURL: `http://localhost:${PORT}/2425/`,
     trace: 'retain-on-failure',
-    ...(executablePath ? { launchOptions: { executablePath } } : {}),
+    launchOptions: {
+      ...(executablePath ? { executablePath } : {}),
+      // Headless Chromium only offers software WebGL behind this flag; the map needs it.
+      args: ['--enable-unsafe-swiftshader'],
+    },
   },
   // Test the production build, because the service worker only exists there.
   webServer: {

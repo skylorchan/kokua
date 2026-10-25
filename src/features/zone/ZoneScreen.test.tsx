@@ -11,6 +11,9 @@ import { setupTestI18n } from '../../test/i18n';
 import { PlacesScreen } from '../places/PlacesScreen';
 import { ZoneScreen } from './ZoneScreen';
 
+// MapLibre needs WebGL, which jsdom doesn't have. The map is covered by e2e tests.
+vi.mock('../map/ZoneMap', () => ({ default: () => null }));
+
 function mockData() {
   vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
     const body = String(input).includes('zones') ? zones : places;
@@ -40,31 +43,41 @@ beforeEach(async () => {
 afterEach(() => vi.restoreAllMocks());
 
 describe('ZoneScreen', () => {
-  it('labels sample data as sample', async () => {
+  const ready = () => screen.findByText(/^Zones: Hawaiʻi Statewide GIS Program/);
+
+  it('names the official source of the zone data', async () => {
     renderIn(<ZoneScreen />);
-    expect(await screen.findByText(en.data.sampleHeading)).toBeInTheDocument();
+    expect(await ready()).toBeInTheDocument();
+    expect(screen.queryByText(en.data.sampleHeading)).not.toBeInTheDocument();
   });
 
-  it('says you are in a zone for a point inside a sample zone', async () => {
+  it('says you are in a zone on Waikīkī Beach', async () => {
     renderIn(<ZoneScreen />);
-    await screen.findByText(en.data.sampleHeading);
-    await enterCoords('21.277', '-157.83');
-    expect(await screen.findByText(en.screens.zone.inZone)).toBeInTheDocument();
+    await ready();
+    await enterCoords('21.2764', '-157.8268');
+    expect(
+      await screen.findByRole('heading', { name: en.safety.inZoneHeading }),
+    ).toBeInTheDocument();
     expect(screen.getByText(en.safety.inZone)).toBeInTheDocument();
+    expect(screen.getByText(/Tsunami evacuation zone: Oʻahu/)).toBeInTheDocument();
   });
 
-  it('says you are outside zones for an inland point', async () => {
+  it('says you are outside zones in inland Mililani', async () => {
     renderIn(<ZoneScreen />);
-    await screen.findByText(en.data.sampleHeading);
+    await ready();
     await enterCoords('21.45', '-158.0');
-    expect(await screen.findByText(en.screens.zone.notInZone)).toBeInTheDocument();
+    expect(
+      await screen.findByRole('heading', { name: en.safety.notInZoneHeading }),
+    ).toBeInTheDocument();
   });
 
   it('refuses to answer outside the data coverage', async () => {
     renderIn(<ZoneScreen />);
-    await screen.findByText(en.data.sampleHeading);
-    await enterCoords('19.72', '-155.08'); // Hilo, not covered by the Oʻahu data
-    expect(await screen.findByText(en.screens.zone.outsideCoverage)).toBeInTheDocument();
+    await ready();
+    await enterCoords('34.05', '-118.24'); // Los Angeles
+    expect(
+      await screen.findByRole('heading', { name: en.safety.outsideCoverageHeading }),
+    ).toBeInTheDocument();
   });
 
   it('rejects out-of-range coordinates', async () => {
@@ -81,14 +94,32 @@ describe('ZoneScreen', () => {
 });
 
 describe('PlacesScreen', () => {
-  it('lists the nearest places with distance and direction', async () => {
+  const ready = () => screen.findByText(/^Places: City and County of Honolulu/);
+
+  it('lists the five nearest official refuge areas with distance and direction', async () => {
     renderIn(<PlacesScreen />);
-    await screen.findByText(en.data.sampleHeading);
-    await enterCoords('21.30', '-157.835');
+    await ready();
+    // Moanalua High School's own coordinates, from the Honolulu DEM layer.
+    await enterCoords('21.347024', '-157.900103');
     const list = await screen.findByRole('list', { name: en.screens.places.listLabel });
     const items = list.querySelectorAll('li');
     expect(items).toHaveLength(5);
-    expect(items[0]).toHaveTextContent('SAMPLE place A (not real)');
-    expect(items[0]).toHaveTextContent(/0\.6 km \(0\.3 mi\) to the north/);
+    expect(items[0]).toHaveTextContent('Moanalua High');
+    expect(items[0]).toHaveTextContent('2825 Ala Ilima St, Honolulu');
+    expect(items[0]).toHaveTextContent(/^.*0 km \(0 mi\) to the north/);
+    expect(items[1]).toHaveTextContent(/km \(.* mi\) to the/);
+  });
+
+  it('warns that refuge areas are not for tsunamis', async () => {
+    renderIn(<PlacesScreen />);
+    expect(screen.getByText(en.safety.tsunamiNotRefuge)).toBeInTheDocument();
+  });
+
+  it('says so when the location is not on Oʻahu', async () => {
+    renderIn(<PlacesScreen />);
+    await ready();
+    await enterCoords('20.89', '-156.47'); // Maui
+    expect(await screen.findByText(en.screens.places.outsideCoverage)).toBeInTheDocument();
+    expect(screen.queryByRole('list', { name: en.screens.places.listLabel })).toBeNull();
   });
 });

@@ -1,7 +1,11 @@
 import { createContext, useContext } from 'react';
 import type { Position } from '../geo/types';
 
-export type UserLocation = { position: Position; source: 'gps' | 'manual'; accuracyM?: number };
+export type UserLocation = {
+  position: Position;
+  source: 'gps' | 'manual' | 'map';
+  accuracyM?: number;
+};
 
 type LocationState = {
   location: UserLocation | null;

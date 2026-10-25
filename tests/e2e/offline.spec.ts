@@ -1,12 +1,5 @@
-import { expect, test, type Page } from '@playwright/test';
-
-/** Wait until the service worker has installed, cached the app, and controls the page. */
-async function waitForServiceWorker(page: Page) {
-  await page.waitForFunction(async () => {
-    const reg = await navigator.serviceWorker.ready;
-    return reg.active !== null && navigator.serviceWorker.controller !== null;
-  });
-}
+import { expect, test } from '@playwright/test';
+import { waitForServiceWorker } from './helpers';
 
 test.describe('offline (airplane mode) v0', () => {
   test('app shell loads and switches language with no network after first visit', async ({
@@ -35,8 +28,8 @@ test.describe('offline (airplane mode) v0', () => {
     await expect(page.getByText(/翻訳がまだ確認されていない/)).toBeVisible();
 
     // Navigation between screens works offline too.
-    await page.getByRole('link', { name: '避難場所' }).click();
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText('最寄りの避難場所');
+    await page.getByRole('link', { name: '避難所' }).click();
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('ハリケーン避難所');
   });
 
   test('remembers the chosen language across an offline restart', async ({ page, context }) => {

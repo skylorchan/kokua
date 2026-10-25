@@ -78,15 +78,6 @@
     "safety.naturalWarning": {
       "status": "machine"
     },
-    "screens.zone.inZone": {
-      "status": "machine"
-    },
-    "screens.zone.notInZone": {
-      "status": "machine"
-    },
-    "screens.zone.outsideCoverage": {
-      "status": "machine"
-    },
     "screens.places.listLabel": {
       "status": "machine"
     },
@@ -150,9 +141,6 @@
     "data.sampleBody": {
       "status": "machine"
     },
-    "data.source": {
-      "status": "machine"
-    },
     "zoneKind.tsunami": {
       "status": "machine"
     },
@@ -190,6 +178,252 @@
       "status": "machine"
     },
     "compass.NW": {
+      "status": "machine"
+    },
+    "safety.inZoneHeading": {
+      "status": "machine"
+    },
+    "safety.inExtremeHeading": {
+      "status": "machine"
+    },
+    "safety.inExtremeZone": {
+      "status": "machine"
+    },
+    "safety.notInZoneHeading": {
+      "status": "machine"
+    },
+    "safety.outsideCoverageHeading": {
+      "status": "machine"
+    },
+    "data.sourceZones": {
+      "status": "machine"
+    },
+    "data.sourcePlaces": {
+      "status": "machine"
+    },
+    "i18n.unreviewedList": {
+      "status": "machine"
+    },
+    "safety.alertsStale": {
+      "status": "machine"
+    },
+    "safety.kitWater": {
+      "status": "machine"
+    },
+    "safety.kitFood": {
+      "status": "machine"
+    },
+    "safety.kitMeds": {
+      "status": "machine"
+    },
+    "safety.kitFirstAid": {
+      "status": "machine"
+    },
+    "safety.kitRadio": {
+      "status": "machine"
+    },
+    "safety.kitLight": {
+      "status": "machine"
+    },
+    "safety.kitPower": {
+      "status": "machine"
+    },
+    "safety.kitDocs": {
+      "status": "machine"
+    },
+    "safety.kitCash": {
+      "status": "machine"
+    },
+    "safety.kitPets": {
+      "status": "machine"
+    },
+    "safety.kitKnowZone": {
+      "status": "machine"
+    },
+    "safety.kitOutOfArea": {
+      "status": "machine"
+    },
+    "safety.printPlan": {
+      "status": "machine"
+    },
+    "alerts.updated": {
+      "status": "machine"
+    },
+    "alerts.refresh": {
+      "status": "machine"
+    },
+    "alerts.refreshing": {
+      "status": "machine"
+    },
+    "alerts.offlineCached": {
+      "status": "machine"
+    },
+    "alerts.neverLoaded": {
+      "status": "machine"
+    },
+    "alerts.none": {
+      "status": "machine"
+    },
+    "alerts.englishOnly": {
+      "status": "machine"
+    },
+    "alerts.until": {
+      "status": "machine"
+    },
+    "alerts.issued": {
+      "status": "machine"
+    },
+    "alerts.details": {
+      "status": "machine"
+    },
+    "alerts.instructions": {
+      "status": "machine"
+    },
+    "alerts.listLabel": {
+      "status": "machine"
+    },
+    "alerts.sourceLink": {
+      "status": "machine"
+    },
+    "alerts.severity.Extreme": {
+      "status": "machine"
+    },
+    "alerts.severity.Severe": {
+      "status": "machine"
+    },
+    "alerts.severity.Moderate": {
+      "status": "machine"
+    },
+    "alerts.severity.Minor": {
+      "status": "machine"
+    },
+    "alerts.severity.Unknown": {
+      "status": "machine"
+    },
+    "plan.loading": {
+      "status": "machine"
+    },
+    "plan.privacy": {
+      "status": "machine"
+    },
+    "plan.saveFailed": {
+      "status": "machine"
+    },
+    "plan.kitHeading": {
+      "status": "machine"
+    },
+    "plan.kitProgress": {
+      "status": "machine"
+    },
+    "plan.people": {
+      "status": "machine"
+    },
+    "plan.kitSource": {
+      "status": "machine"
+    },
+    "plan.meetHeading": {
+      "status": "machine"
+    },
+    "plan.meetBody": {
+      "status": "machine"
+    },
+    "plan.meet.nearHome": {
+      "status": "machine"
+    },
+    "plan.meet.outsideNeighborhood": {
+      "status": "machine"
+    },
+    "plan.meet.highGround": {
+      "status": "machine"
+    },
+    "plan.meetPlaceholder.nearHome": {
+      "status": "machine"
+    },
+    "plan.meetPlaceholder.outsideNeighborhood": {
+      "status": "machine"
+    },
+    "plan.meetPlaceholder.highGround": {
+      "status": "machine"
+    },
+    "plan.contactsHeading": {
+      "status": "machine"
+    },
+    "plan.contactsBody": {
+      "status": "machine"
+    },
+    "plan.contactName": {
+      "status": "machine"
+    },
+    "plan.contactPhone": {
+      "status": "machine"
+    },
+    "plan.contactRelation": {
+      "status": "machine"
+    },
+    "plan.contactRelationPlaceholder": {
+      "status": "machine"
+    },
+    "plan.addContact": {
+      "status": "machine"
+    },
+    "plan.remove": {
+      "status": "machine"
+    },
+    "plan.removeContact": {
+      "status": "machine"
+    },
+    "plan.notes": {
+      "status": "machine"
+    },
+    "plan.notesPlaceholder": {
+      "status": "machine"
+    },
+    "plan.shareHeading": {
+      "status": "machine"
+    },
+    "plan.print": {
+      "status": "machine"
+    },
+    "plan.showQr": {
+      "status": "machine"
+    },
+    "plan.hideQr": {
+      "status": "machine"
+    },
+    "plan.qrPrivacy": {
+      "status": "machine"
+    },
+    "plan.qrAlt": {
+      "status": "machine"
+    },
+    "plan.qrTooBig": {
+      "status": "machine"
+    },
+    "plan.printTitle": {
+      "status": "machine"
+    },
+    "screens.places.outsideCoverage": {
+      "status": "machine"
+    },
+    "safety.refugeInfo": {
+      "status": "machine"
+    },
+    "safety.tsunamiNotRefuge": {
+      "status": "machine"
+    },
+    "placeKind.hurricane-refuge": {
+      "status": "machine"
+    },
+    "map.label": {
+      "status": "machine"
+    },
+    "map.loading": {
+      "status": "machine"
+    },
+    "map.unavailable": {
+      "status": "machine"
+    },
+    "map.help": {
       "status": "machine"
     }
   }

@@ -30,13 +30,9 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version-file: .nvmrc
-      - name: Probe candidate datasets
-        run: node scripts/data/probe.mjs
-        continue-on-error: true
       - name: Tsunami evacuation zones
         run: node scripts/data/fetch-zones.mjs
-      - name: Safe places
-        if: hashFiles('scripts/data/fetch-places.mjs') != ''
+      - name: Hurricane refuge areas (Oʻahu)
         run: node scripts/data/fetch-places.mjs
       - name: NWS alert fixtures
         run: node scripts/data/fetch-nws-fixtures.mjs

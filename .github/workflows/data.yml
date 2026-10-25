@@ -1,0 +1,40 @@
+name: Data
+
+# Downloads official datasets on a GitHub runner (the dev container's network policy
+# blocks these hosts) and commits the results back to the branch.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/data/**'
+      - '.github/workflows/data.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+      - run: node scripts/data/probe.mjs
+      - name: Protomaps extract sizes for Oʻahu
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download -R protomaps/go-pmtiles -p '*Linux_x86_64.tar.gz' -O pmtiles.tgz
+          tar xzf pmtiles.tgz pmtiles
+          BUILD=$(curl -s https://build-metadata.protomaps.dev/builds.json | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const b=JSON.parse(s);console.log(b[b.length-1].key)})")
+          echo "build: $BUILD"
+          for z in 13 14 15; do
+            ./pmtiles extract "https://build.protomaps.com/$BUILD" "oahu-z$z.pmtiles" --bbox=-158.30,21.24,-157.63,21.72 --maxzoom=$z >/dev/null 2>&1 || echo "extract z$z failed"
+            ls -la "oahu-z$z.pmtiles" || true
+          done

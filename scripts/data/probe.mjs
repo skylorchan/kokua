@@ -40,23 +40,24 @@ async function layer(base) {
   console.log(JSON.stringify(sample.features, null, 1)?.slice(0, 3500));
 }
 
-await search('owner:holisgis shelter');
-await search('owner:honolulugis shelter');
-await search('shelter Oahu');
-await search('"evacuation shelters" Hawaii');
-await search('"emergency shelters" Honolulu');
-await search('shelters Kauai OR Maui OR "Hawaii County"');
-await layer('https://services1.arcgis.com/x4h61KaW16vFs7PM/arcgis/rest/services/Potential_Emergency_Shelters_PDC/FeatureServer');
-
-// How old are the Hawaiʻi records in the FEMA / Red Cross National Shelter System layer?
-const NSS = 'https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/Critical_Infrastructure_Map_Service/FeatureServer/0';
-const stats = await j(`${NSS}/query?where=STATE%3D%27HI%27&outStatistics=${encodeURIComponent(JSON.stringify([{ statisticType: 'max', onStatisticField: 'CONTDATE', outStatisticFieldName: 'maxcont' }, { statisticType: 'max', onStatisticField: 'GEODATE', outStatisticFieldName: 'maxgeo' }, { statisticType: 'min', onStatisticField: 'GEODATE', outStatisticFieldName: 'mingeo' }, { statisticType: 'count', onStatisticField: 'OBJECTID', outStatisticFieldName: 'n' }]))}&f=json`);
-const a = stats.features?.[0]?.attributes ?? {};
-console.log('\nNSS HI:', { n: a.n, maxContact: a.maxcont && new Date(a.maxcont).toISOString(), geoRange: [a.mingeo && new Date(a.mingeo).toISOString(), a.maxgeo && new Date(a.maxgeo).toISOString()] });
-for (const f of ['COUNTY', 'S_TYPE', 'ST_VERSION', 'AGENCY_OP']) {
-  const g = await j(`${NSS}/query?where=STATE%3D%27HI%27&groupByFieldsForStatistics=${f}&outStatistics=${encodeURIComponent(JSON.stringify([{ statisticType: 'count', onStatisticField: 'OBJECTID', outStatisticFieldName: 'n' }]))}&f=json`);
-  console.log(f, JSON.stringify(g.features?.map((x) => x.attributes)));
+const HNL = 'https://services.arcgis.com/tNJpAOha4mODLkXz/arcgis/rest/services/Potential_Emergency_Shelter_Edit_EOC/FeatureServer';
+await layer(HNL);
+const svcMeta = await j(`${HNL}?f=json`);
+for (const l of svcMeta.layers ?? []) {
+  await layer(`${HNL}/${l.id}`);
+  const m = await j(`${HNL}/${l.id}?f=json`);
+  for (const f of m.fields ?? []) {
+    if (!['esriFieldTypeString', 'esriFieldTypeSmallInteger', 'esriFieldTypeInteger'].includes(f.type)) continue;
+    const g = await j(`${HNL}/${l.id}/query?where=1%3D1&groupByFieldsForStatistics=${f.name}&outStatistics=${encodeURIComponent(JSON.stringify([{ statisticType: 'count', onStatisticField: m.objectIdField ?? 'OBJECTID', outStatisticFieldName: 'n' }]))}&f=json`);
+    const vals = g.features?.map((x) => `${x.attributes[f.name]}=${x.attributes.n}`) ?? [];
+    if (vals.length && vals.length <= 25) console.log(`  ${f.name} (${f.alias}):`, vals.join(' | '));
+    else console.log(`  ${f.name} (${f.alias}): ${vals.length} distinct`);
+  }
 }
-const svc = await j('https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/Critical_Infrastructure_Map_Service/FeatureServer?f=json');
-console.log('NSS service:', strip(svc.serviceDescription).slice(0, 600), '| copyright:', svc.copyrightText);
-await search('"National Shelter System Facilities"', 5);
+const itemInfo = await j('https://www.arcgis.com/sharing/rest/content/items/5dcbab301711462e8cdaf0a3b69436d6?f=json');
+console.log('item:', { title: itemInfo.title, snippet: itemInfo.snippet, license: strip(itemInfo.licenseInfo).slice(0, 800), access: strip(itemInfo.accessInformation), description: strip(itemInfo.description).slice(0, 2500), tags: itemInfo.tags });
+const viewer = await j('https://www.arcgis.com/sharing/rest/content/items/14fad086020b4bc8acfcf2e3f79d4329?f=json');
+console.log('viewer:', { title: viewer.title, snippet: viewer.snippet, license: strip(viewer.licenseInfo).slice(0, 600), description: strip(viewer.description).slice(0, 1500) });
+const webmap = await j('https://www.arcgis.com/sharing/rest/content/items/16333aa20e724847a53824988c2c18b1/data?f=json');
+console.log('webmap layers:', JSON.stringify(webmap.operationalLayers?.map((l) => ({ title: l.title, url: l.url, filter: l.layerDefinition?.definitionExpression }))));
+await layer('https://services1.arcgis.com/x4h61KaW16vFs7PM/arcgis/rest/services/Potential_Emergency_Shelters_PDC/FeatureServer/36');
